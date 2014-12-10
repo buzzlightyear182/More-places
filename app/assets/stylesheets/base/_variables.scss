@@ -1,7 +1,7 @@
 // Typography
-$sans-serif: $helvetica;
-$serif: $georgia;
-$base-font-family: $sans-serif;
+$sans-serif: 'Questrial', $helvetica, sans-serif;
+$serif: 'Sanchez', $georgia, serif;
+$base-font-family: $serif;
 $header-font-family: $base-font-family;
 
 // Font Sizes
