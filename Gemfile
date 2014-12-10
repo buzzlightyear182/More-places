@@ -59,6 +59,5 @@ gem 'country_select'
 gem 'bourbon'
 gem 'neat'
 gem 'refills'
-gem 'foundation-rails'
 
 
