@@ -1,9 +1,17 @@
 .form {
-  max-width: 90%;
   margin: auto;
-  padding-top: 80px;
-  @include media ($large-screen) {
+  padding: 80px 20px;
+  @include media ($medium-screen) {
     padding-top: 20px;
-    max-width: 40%;
+    @include shift(4);
+    @include span-columns(4);
   }
+}
+
+.inline {
+  display: inline;
+}
+
+.actions input {
+  float: right;
 }

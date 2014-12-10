@@ -11,11 +11,12 @@
  * file per style scope.
  *
  *= require_self
-
+ *= require normalize-rails
  */
 
 @import "bourbon";
 @import "base/base";
 @import "neat";
 @import "refills/navigation";
-@import "custom/devise"
+@import "custom/dashboard";
+@import "custom/devise";

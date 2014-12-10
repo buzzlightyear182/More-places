@@ -3,6 +3,14 @@ Rails.application.routes.draw do
 
   root 'dashboard#show', via: :get
 
+  # authenticated :user do
+  #   root :to => "dashboard#index"
+  # end
+
+  # root :to => redirect("/users/sign_in")
+
+  resources :dashboard, only: :show
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

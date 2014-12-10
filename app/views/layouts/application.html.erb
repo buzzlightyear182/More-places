@@ -13,7 +13,10 @@
 
   <body>
     <%= render '/refills/navigation' %>
-    <%= yield %>
+    <%= flash_message %>
+    <div class='container'>
+      <%= yield %>
+    </div>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </body>
 </html>

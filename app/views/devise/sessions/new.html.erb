@@ -4,13 +4,8 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
   <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+    <%= f.label "Username or Email" %>
+    <%= f.text_field :login, autofocus: true %>
   </div>
 
   <div class="field">
@@ -21,7 +16,7 @@
   <% if devise_mapping.rememberable? -%>
     <div class="field">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :remember_me, :class => 'inline' %>
     </div>
   <% end -%>
 
