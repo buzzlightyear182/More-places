@@ -20,3 +20,5 @@ Use more model associations
 Try out new gems/tools that might be more efficient
 
 Better search function
+
+Responsive design
