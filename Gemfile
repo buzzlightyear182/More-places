@@ -56,6 +56,7 @@ gem 'devise'
  #Country list
 gem 'countries'
 gem 'country_select'
+gem 'cities'
 
 #Front-end stuff
 gem 'bourbon'

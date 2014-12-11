@@ -1,5 +1,5 @@
 <h1>Create your own trip!</h1>
 <%= form_for @trip do |f| %>
   <%= f.label :country %>
-  <%= f.text_field :country, :id => 'autocomplete' %>
+  <%= f.country_select :country %>
 <% end %>
