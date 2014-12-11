@@ -1,14 +1,4 @@
 #trip_country {
-  @include transition (all 0.2s ease-in-out);
-  border-radius: $base-border-radius;
-  box-shadow: 0 2px 2px transparentize(black, .8);
-  cursor: pointer;
-  color: $dropdown-color;
-  height: $dropdown-height;
-  text-align: center;
-  font-family: $sans-serif;
-  padding: $dropdown-padding;
-  border: $dropdown-border;
-  background: $dropdown-background;
+  @extend %dropdown;
 }
 
