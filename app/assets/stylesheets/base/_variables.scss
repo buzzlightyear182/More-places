@@ -1,5 +1,5 @@
 // Typography
-$sans-serif: $helvetica, sans-serif;
+$sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $serif: 'Sanchez', $georgia, serif;
 $base-font-family: $serif;
 $header-font-family: $base-font-family;
@@ -64,3 +64,13 @@ $form-box-shadow: inset 0 1px 3px rgba(black,0.06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
 $form-font-size: $base-font-size;
 $form-font-family: $base-font-family;
+
+// Dropdown
+$dropdown-color: $base-font-color;
+$dropdown-border: 1px solid silver;
+$dropdown-background: $base-background-color;
+$dropdown-inner-border: 1px solid silver;
+$dropdown-height: 40px;
+$dropdown-padding: 1em;
+$dropdown-distance-from-menu: 50px;
+$dropdown-arrow-top-distance: 0;
