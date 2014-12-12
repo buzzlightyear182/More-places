@@ -50,13 +50,15 @@ gem 'factory_girl_rails', group: [:test, :development]
 gem 'letter_opener', group: [:test, :development]
 gem 'database_cleaner', group: [:test, :development]
 
+gem 'simple_form'
+
 #User authentication
 gem 'devise'
 
  #Country list
 gem 'countries'
 gem 'country_select'
-gem 'cities'
+# gem 'worlddb-models'
 
 #Front-end stuff
 gem 'bourbon'

@@ -1,5 +1,5 @@
 // jQuery(function() {
-//   return $('#trip_country').autocomplete({
-//     source: $('#trip_country').data('autocomplete-source')
+//   return $('#trip_city').autocomplete({
+//     source: $('#trip_city').data('autocomplete_source')
 //   });
 // });

@@ -18,9 +18,8 @@ ActiveRecord::Schema.define(version: 20141211102204) do
 
   create_table "trips", force: true do |t|
     t.integer  "user_id"
-    t.string   "city"
-    t.string   "country"
-    t.string   "activities",  default: [], array: true
+    t.string   "destination"
+    t.string   "activities",  array: true
     t.date     "from_date"
     t.date     "to_date"
     t.text     "description"

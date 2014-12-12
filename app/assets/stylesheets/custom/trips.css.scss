@@ -1,4 +1,20 @@
-#trip_country {
+#new_trip {
+  @include span-columns(12);
+}
+
+#trip_country, #trip_activities {
   @extend %dropdown;
 }
 
+#new_trip div {
+  @include span-columns(4);
+  margin: 20px 5px;
+  display: inline-block;
+  background-color: lighten($red, 30%);
+  border-radius: $base-border-radius;
+  padding: 5px;
+}
+
+#new_trip div:last-child {
+  background-color: $base-background-color;
+}
