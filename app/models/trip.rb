@@ -1,9 +1,9 @@
 class Trip < ActiveRecord::Base
   belongs_to :user
+  belongs_to :destination
 
   validates :user, presence: true
   validates :destination, presence: true
-  validates :activities, presence: true
   validates :from_date, presence: true
   validates :to_date, presence: true
   validates :description, presence: true
@@ -24,8 +24,16 @@ class Trip < ActiveRecord::Base
     end
   end
 
-  def popular_activities
-    ['Dive', 'Trek', 'Food Trip', 'Sightseeing', 'Hang-out']
+  def name
+    "Trip ID #{id}: going to #{destination.name}"
+  end
+
+  def destination_name
+    destination.try(:name)
+  end
+
+  def destination_name=(name)
+    self.destination = Destination.find_or_create_by(name: name) if name.present?
   end
 
 end

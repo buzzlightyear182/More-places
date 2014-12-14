@@ -12,7 +12,7 @@ RSpec.describe Trip, :type => :model do
     it "belongs to a user" do
       @user = create(:user)
       result = create(:trip, user: @user)
-      expect(@user.trips).to eq([result])
+      expect(@user.trips).to eq(result)
     end
 
   end
@@ -20,12 +20,7 @@ RSpec.describe Trip, :type => :model do
   describe "should not be valid when it" do
 
     it "doesn't have a destination" do
-      trip = build(:trip, destination: nil )
-      expect(trip).to be_invalid
-    end
-
-    it "doesn't have any activity" do
-      trip = build(:trip, activities: nil )
+      trip = build(:trip, destination: nil)
       expect(trip).to be_invalid
     end
 

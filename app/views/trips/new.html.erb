@@ -1,17 +1,2 @@
-<h1>Create your own trip!</h1>
-<%= simple_form_for @trip do |f| %>
-    <%= f.input :destination %>
-
-    <%= f.input :activities, collection: @trip.popular_activities, :class => 'dropdown', as: :radio_buttons %>
-
-    <%= f.input :from_date, as: :date, html5: true %>
-
-    <%= f.input :to_date, as: :date, html5: true %>
-
-    <%= f.input :description , as: :text %>
-
-    <%= f.input :capacity, placeholder: "Leave blank if no maximum capacity" %>
-
-    <%= f.button :submit, :class => "submit" %>
-
-<% end %>
+<% content_for :title, "Create your own trip!" %>
+<%= render 'trip_form' %>

@@ -1,0 +1,29 @@
+<%= form_for @trip do |f| %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <div class="trip_form_field">
+    <h4>Where do you want to go?</h4>
+    <%= f.label :destination_name %>
+    <%= f.text_field :destination_name %>
+  </div>
+  <div class="trip_form_field">
+    <h4>What's your schedule?</h4>
+    <%= f.label :from_date %>
+    <%= f.date_field :from_date %>
+    <br/>
+    <%= f.label :to_date %>
+    <%= f.date_field :to_date %>
+  </div>
+  <div class="trip_form_field">
+    <h4>Say something about your trip</h4>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div class="trip_form_field">
+    <h4>Is there a capacity for your trip? (Optional)</h4>
+    <em><%= f.label :capacity %></em>
+    <%= f.text_area :capacity, placeholder: 'Leave blank if no maximum capacity' %>
+  </div>
+  <div>
+    <%= f.submit "Submit", :class => "submit" %>
+  </div>
+<% end %>

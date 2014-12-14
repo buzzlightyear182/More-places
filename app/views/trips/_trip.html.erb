@@ -1,0 +1,11 @@
+<%= div_for trip do %>
+  Going to <%= trip.destination_name %>
+  From <%= trip.from_date %>
+  To <%= trip.to_date %>
+  Description: <%= trip.description %>
+  Capacity: <%= trip.capacity %>
+
+  <%= link_to "Update this trip", edit_trip_path(:id => trip.id) %>
+  <%= link_to "Cancel this", trip_path(:id => trip.id), method: 'DELETE' %>
+
+<% end %>
