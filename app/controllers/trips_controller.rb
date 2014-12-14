@@ -1,5 +1,4 @@
 class TripsController < ApplicationController
-  # include ActiveModel::Conversion
   before_action :authenticate_user!, except: [:index]
 
   def index

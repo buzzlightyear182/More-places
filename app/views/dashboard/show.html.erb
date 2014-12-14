@@ -1,4 +1,5 @@
-<h1>Dashboard</h1>
+<% content_for :title, "Dashboard" %>
+
 <p>Hello <%= @dashboard.user %></p>
 
 <%= link_to "Create your own trip", new_trip_path %>
