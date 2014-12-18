@@ -17,5 +17,7 @@
 //= require jquery-ui/menu
 //= require jquery-ui/autocomplete
 //= require jquery_ujs
+
 //= require turbolinks
 //= require experiences
+//= require dashboard

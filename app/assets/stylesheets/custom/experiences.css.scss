@@ -10,7 +10,6 @@
   @include span-columns(4);
   margin: 20px 5px;
   display: inline-block;
-  background-color: lighten($red, 30%);
   border-radius: $base-border-radius;
   padding: 5px;
 }

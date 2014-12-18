@@ -1,21 +1,21 @@
 <header class="navigation">
-  <div class="menu-wrapper">
+  <div class="navigation-wrapper">
     <%= link_to image_tag("logo_white_text.png"), root_path, class: "logo" %>
     <% if user_signed_in? %>
-    <p class="navigation-menu-button" id="js-mobile-menu">MENU</p>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
     <div class="nav">
-      <ul id="navigation-menu">
-        <li><%= link_to "Browse Experiences", experiences_path %></li>
-        <li class="nav-link"><a href="javascript:void(0)">About Us</a></li>
-        <li class="nav-link"><a href="javascript:void(0)">FAQs</a></li>
-        <li class="nav-link"><a href="javascript:void(0)">Contact</a></li>
-
-        <!-- <li class="nav-link more"><a href="javascript:void(0)">More</a>
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        <li class="nav-link more"><%= link_to "Browse", experiences_path %>
           <ul class="submenu">
-            <li><a href="javascript:void(0)">Submenu Item</a></li>
-            <li><a href="javascript:void(0)">Another Item</a></li>
+            <li class="nav-link"><%= link_to "By Destinations", destinations_path %></li>
+            <li class="nav-link"><%= link_to "By Activities", activities_path %></li>
           </ul>
-        </li> -->
+        </li>
+        <li class="nav-link more"><a href="javascript:void(0)">About Us</a>
+          <ul class="submenu">
+            <li class="nav-link"><a href="javascript:void(0)">FAQ</a></li>
+          </ul>
+        <li class="nav-link"><a href="javascript:void(0)">Contact</a></li>
       </ul>
     </div>
 
@@ -36,29 +36,3 @@
   </div>
 
 </header>
-
-<script>
-  $(function() {
-    var menu = $('#navigation-menu');
-    var menuToggle = $('#js-mobile-menu');
-    var signUp = $('.sign-up');
-
-    $(menuToggle).on('click', function(e) {
-      e.preventDefault();
-      menu.slideToggle(function(){
-        if(menu.is(':hidden')) {
-          menu.removeAttr('style');
-        }
-      });
-    });
-
-    // underline under the active nav item
-    $(".nav .nav-link").click(function() {
-      $(".nav .nav-link").each(function() {
-        $(this).removeClass("active-nav-item");
-      });
-      $(this).addClass("active-nav-item");
-      $(".nav .more").removeClass("active-nav-item");
-    });
-  });
-</script>

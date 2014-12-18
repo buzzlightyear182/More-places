@@ -18,10 +18,9 @@
     <%= f.label :to_date %>
     <%= f.date_field :to_date %>
   </div>
-  <div class="trip_form_field">
-    <h4>Say something about your trip</h4>
+  <div class="form-group">
     <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, placeholder: "Say something about your trip" %>
   </div>
   <div class="trip_form_field">
     <h4>Is there a capacity for your trip? (Optional)</h4>

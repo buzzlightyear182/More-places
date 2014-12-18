@@ -1,11 +1,12 @@
 FactoryGirl.define do
-  factory :trip do
+  factory :experience do
     user
     destination
+    activity
     from_date Date.today+2
-    to_date Date.today+3
+    to_date Date.today+5
     description "Excited to experience winter!"
-    capacity 2
+    capacity 3
   end
 
 end
