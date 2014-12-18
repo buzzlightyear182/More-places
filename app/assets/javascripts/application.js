@@ -18,4 +18,4 @@
 //= require jquery-ui/autocomplete
 //= require jquery_ujs
 //= require turbolinks
-//= require trips
+//= require experiences

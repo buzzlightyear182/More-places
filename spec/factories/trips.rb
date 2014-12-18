@@ -1,8 +1,7 @@
 FactoryGirl.define do
   factory :trip do
     user
-    destination "London"
-    activities ["Sightseeing"]
+    destination
     from_date Date.today+2
     to_date Date.today+3
     description "Excited to experience winter!"

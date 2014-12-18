@@ -1,0 +1,11 @@
+<%= div_for experience do %>
+  Going to <%= experience.destination_name %>
+  From <%= experience.from_date %>
+  To <%= experience.to_date %>
+  Description: <%= experience.description %>
+  Capacity: <%= experience.capacity %>
+
+  <%= link_to "Update this experience", edit_experience_path(:id => experience.id) %>
+  <%= link_to "Cancel this", experience_path(:id => experience.id), method: 'DELETE' %>
+
+<% end %>

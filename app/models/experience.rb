@@ -1,6 +1,7 @@
-class Trip < ActiveRecord::Base
+class Experience < ActiveRecord::Base
   belongs_to :user
   belongs_to :destination
+  belongs_to :activity
 
   validates :user, presence: true
   validates :destination, presence: true
@@ -25,7 +26,7 @@ class Trip < ActiveRecord::Base
   end
 
   def name
-    "Trip ID #{id}: going to #{destination.name}"
+    "Trip ID #{id}: #{activity.name} going to #{destination.name}"
   end
 
   def destination_name
@@ -34,6 +35,14 @@ class Trip < ActiveRecord::Base
 
   def destination_name=(name)
     self.destination = Destination.find_or_create_by(name: name) if name.present?
+  end
+
+  def activity_name
+    activity.try(:name)
+  end
+
+  def activity_name=(name)
+    self.activity = Activity.find_or_create_by(name: name) if name.present?
   end
 
 end

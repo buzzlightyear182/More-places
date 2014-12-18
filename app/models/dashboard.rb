@@ -7,4 +7,5 @@ class Dashboard
   def user
      @user.username
   end
+
 end

@@ -1,0 +1,5 @@
+<% content_for :title, "Browse other trips happening!" %>
+<% @experiences.each do |experience| %>
+  <%= link_to experience.name, experience_path(:id => experience.id) %>
+<% end %>
+

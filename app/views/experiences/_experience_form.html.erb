@@ -1,9 +1,14 @@
-<%= form_for @trip do |f| %>
+<%= form_for @experience do |f| %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <div class="trip_form_field">
     <h4>Where do you want to go?</h4>
     <%= f.label :destination_name %>
     <%= f.text_field :destination_name %>
+  </div>
+  <div class="trip_form_field">
+    <h4>What is your main activity?</h4>
+    <%= f.label :activity_name %>
+    <%= f.text_field :activity_name %>
   </div>
   <div class="trip_form_field">
     <h4>What's your schedule?</h4>
