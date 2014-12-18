@@ -2,4 +2,10 @@
 
 <p>Hello <%= @dashboard.user %></p>
 
+<div>
+<h1>Your Experiences</h1>
+<% @dashboard.experiences.each do |experience| %>
+  <%= link_to experience.name, experience_path(:id => experience.id) %><br/>
+<% end %>
+</div>
 <%= link_to "Start your own experience", new_experience_path %>

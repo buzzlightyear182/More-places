@@ -5,7 +5,11 @@ class Dashboard
   end
 
   def user
-     @user.username
+    @user.username
+  end
+
+  def experiences
+    @user.experiences
   end
 
 end
