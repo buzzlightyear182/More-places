@@ -1,19 +1,49 @@
-#new_trip {
+#new_trip, .edit_trip {
   @include span-columns(12);
+  margin: auto;
 }
 
-#trip_country, #trip_activities {
-  @extend %dropdown;
+.centered {
+  @include span-columns(6);
+  position: relative;
+  display: block;
+  vertical-align: middle;
+  margin: auto;
+  text-align: left;
+  z-index: 1;
 }
 
-#new_trip div {
-  @include span-columns(4);
-  margin: 20px 5px;
-  display: inline-block;
-  border-radius: $base-border-radius;
-  padding: 5px;
+#new_trip div, .edit_trip div {
+  h4 {
+    color: $turqoise;
+  }
+
+  @include span-columns(11);
+  margin: 10px;
+  @include media ($medium-screen) {
+    padding-top: 20px;
+    @include span-columns(6);
+    margin: 5px 5px;
+    border-radius: $base-border-radius;
+    padding: 5px;
+    display: inline-block;
+  }
 }
 
-#new_trip div:last-child {
+#new_trip div:last-child,
+.edit_trip div:last-child {
   background-color: $base-background-color;
+  text-align: right;
+  float: right;
+  color: white;
+}
+
+.button {
+  @extend button;
+  font-size: 1em;
+  text-transform: uppercase;
+  padding: .75em 1em;
+  text-align: right;
+  margin: auto;
+  display: block;
 }
