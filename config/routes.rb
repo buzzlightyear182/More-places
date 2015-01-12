@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: :show
 
-  resources :experiences
+  resources :trips
 
   resources :destinations, only: :index
   resources :activities, only: :index

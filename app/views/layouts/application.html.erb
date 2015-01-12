@@ -6,7 +6,7 @@
     <link href='http://fonts.googleapis.com/css?family=Sanchez:400italic,400' rel='stylesheet' type='text/css'>
 
     <title><%= content_for?(:title) ? yield(:title) : "Places Together v2" %></title>
-
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 
     <%= csrf_meta_tags %>

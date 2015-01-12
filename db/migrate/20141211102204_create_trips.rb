@@ -1,6 +1,6 @@
-class CreateExperiences < ActiveRecord::Migration
+class CreateTrips < ActiveRecord::Migration
   def change
-    create_table :experiences do |t|
+    create_table :trips do |t|
       t.belongs_to :user
       t.belongs_to :destination
       t.date :from_date

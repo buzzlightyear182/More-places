@@ -1,12 +1,12 @@
-#new_experience {
+#new_trip {
   @include span-columns(12);
 }
 
-#experience_country, #experience_activities {
+#trip_country, #trip_activities {
   @extend %dropdown;
 }
 
-#new_experience div {
+#new_trip div {
   @include span-columns(4);
   margin: 20px 5px;
   display: inline-block;
@@ -14,6 +14,6 @@
   padding: 5px;
 }
 
-#new_experience div:last-child {
+#new_trip div:last-child {
   background-color: $base-background-color;
 }

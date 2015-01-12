@@ -1,3 +1,7 @@
 class Destination < ActiveRecord::Base
-  has_many :experiences
+  has_many :trips
+
+  def name
+    self.city + ", " + self.country
+  end
 end

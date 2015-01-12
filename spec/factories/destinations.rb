@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :destination do
-    name "London"
+    city "London"
+    country "United Kingdom"
   end
 
 end

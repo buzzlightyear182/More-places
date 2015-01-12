@@ -1,10 +1,11 @@
-class Experience < ActiveRecord::Base
+class Trip < ActiveRecord::Base
   belongs_to :user
   belongs_to :destination
   belongs_to :activity
 
   validates :user, presence: true
   validates :destination, presence: true
+  validates :activity, presence: true
   validates :from_date, presence: true
   validates :to_date, presence: true
   validates :description, presence: true
@@ -34,7 +35,7 @@ class Experience < ActiveRecord::Base
   end
 
   def name
-    "Trip ID #{id}: #{activity.name} trip going to #{destination.name}"
+    "Trip ID #{id}: #{activity.name} going to #{destination.name}"
   end
 
   def destination_name
@@ -42,7 +43,8 @@ class Experience < ActiveRecord::Base
   end
 
   def destination_name=(name)
-    self.destination = Destination.find_or_create_by(name: name, country: country) if name.present?
+    destination_array = name.split(',')
+    self.destination = Destination.find_or_create_by(city: destination_array.first, country: destination_array.last) if name.present?
   end
 
   def activity_name
@@ -50,6 +52,7 @@ class Experience < ActiveRecord::Base
   end
 
   def activity_name=(name)
-    self.activity = Activity.find_or_create_by(name: name) if name.present?
+    self.activity = Activity.create_with(category: "Others").find_or_create_by(name: name) if name.present?
   end
+
 end

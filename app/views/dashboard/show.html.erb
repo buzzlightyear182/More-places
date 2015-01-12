@@ -3,9 +3,9 @@
 <p>Hello <%= @dashboard.user %></p>
 
 <div>
-<h1>Your Experiences</h1>
-<% @dashboard.experiences.each do |experience| %>
-  <%= link_to experience.name, experience_path(:id => experience.id) %><br/>
+<h1>Your Trips</h1>
+<% @dashboard.trips.each do |trip| %>
+  <%= link_to trip.name, trip_path(:id => trip.id) %><br/>
 <% end %>
 </div>
-<%= link_to "Start your own experience", new_experience_path %>
+<%= link_to "Start your own trip", new_trip_path %>

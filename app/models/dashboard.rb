@@ -8,8 +8,8 @@ class Dashboard
     @user.username
   end
 
-  def experiences
-    @user.experiences
+  def trips
+    @user.trips
   end
 
 end

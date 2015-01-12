@@ -10,8 +10,8 @@ RSpec.describe Destination, :type => :model do
   describe "will only be created" do
 
     it "if no record exists" do
-      new_destination = create(:destination, name: "Warner Bros Studios Harry Potter")
-      experience = create(:experience, destination: new_destination)
+      new_destination = create(:destination, city: "Barcelona", country: "Spain")
+      trip = create(:trip, destination: new_destination)
       expect(Destination.count).to eq(2)
     end
 
@@ -20,7 +20,7 @@ RSpec.describe Destination, :type => :model do
   describe "will not be created" do
 
     it "if record exists" do
-      experience = create(:experience, destination: @destination)
+      trip = create(:trip, destination: @destination)
       expect(Destination.count).to eq(1)
     end
 

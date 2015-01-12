@@ -1,10 +1,14 @@
 class DestinationsController < ApplicationController
 
   def index
-    @destinations = Destination.order(:name).where("name like ?", "%#{params[:term]}%")
-    respond_to do |format|
-      format.html
-      format.json { render json: @destinations.map(&:name) }
+    destination_list = Destination.all
+    @destinations = []
+    destination_list.each do |d|
+      unless d.trips.empty?
+        @destinations << d
+      end
     end
+    @destinations
   end
+
 end
