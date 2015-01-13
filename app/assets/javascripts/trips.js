@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $('#new_trip .trip_form_field').hide();
+  $('#new_trip .trip_form_field').css("display","none");
 
   var input = document.getElementById('trip_destination_name');
 

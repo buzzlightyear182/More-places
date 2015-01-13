@@ -8,6 +8,6 @@
     Capacity: <%= trip.capacity %><br/>
   <% end %>
 
-  <%= link_to "Update this trip", edit_trip_path(:id => trip.id) %><br/>
-  <%= link_to "Cancel this", trip_path(:id => trip.id), method: 'DELETE' %>
+<%= show_controls_for trip %>
+
 <% end %>

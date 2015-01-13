@@ -13,6 +13,7 @@
 
   @include span-columns(6 of 12);
   margin: 5px 1px;
+  display: block;
   padding: 5px;
   border-radius: $base-border-radius;
 
@@ -36,6 +37,11 @@
   padding: 1em;
   text-align: right;
   @include span-columns(6);
+}
+
+.change {
+  @include span-columns(3);
+  margin: 10px;
 }
 
 .submit {

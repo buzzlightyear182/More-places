@@ -3,9 +3,10 @@
 <p>Hello <%= @dashboard.user %></p>
 
 <div>
-<h1>Your Trips</h1>
+<h2>Your Trips</h2>
 <% @dashboard.trips.each do |trip| %>
   <%= link_to trip.name, trip_path(:id => trip.id) %><br/>
 <% end %>
 </div>
-<%= link_to "Start your own trip", new_trip_path %>
+
+<%= button_to "Start your own trip", new_trip_path, :class => 'change' %>
