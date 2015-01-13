@@ -53,8 +53,8 @@ $(document).ready(function() {
 
   function displayField(count){
     trip_form_fields[count].style.display ='block';
-    trip_form_fields[count].classList.add('centered');
     trip_form_fields[count].classList.add('animated');
+    trip_form_fields[count].classList.add('centered');
     trip_form_fields[count].classList.add('fadeInUp');
 
     $('#next_button').insertAfter($('form'));

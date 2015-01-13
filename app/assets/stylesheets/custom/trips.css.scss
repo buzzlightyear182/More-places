@@ -1,49 +1,47 @@
 #new_trip, .edit_trip {
   @include span-columns(12);
+  @include outer-container;
   margin: auto;
+}
+
+// #new_trip div, .edit_trip div {
+.trip_form_field {
+
+  h4 {
+    color: $turquoise;
+  }
+
+  @include span-columns(6 of 12);
+  margin: 5px 1px;
+  padding: 5px;
+  border-radius: $base-border-radius;
+
+  @include media($large-screen-down) {
+    @include span-columns(8);
+  }
 }
 
 .centered {
-  @include span-columns(6);
-  position: relative;
-  display: block;
+  padding: 0 10px;
   vertical-align: middle;
   margin: auto;
-  text-align: left;
+  text-align: center;
   z-index: 1;
-}
-
-#new_trip div, .edit_trip div {
-  h4 {
-    color: $turqoise;
-  }
-
-  @include span-columns(11);
-  margin: 10px;
-  @include media ($medium-screen) {
-    padding-top: 20px;
-    @include span-columns(6);
-    margin: 5px 5px;
-    border-radius: $base-border-radius;
-    padding: 5px;
-    display: inline-block;
-  }
-}
-
-#new_trip div:last-child,
-.edit_trip div:last-child {
-  background-color: $base-background-color;
-  text-align: right;
-  float: right;
-  color: white;
 }
 
 .button {
   @extend button;
   font-size: 1em;
   text-transform: uppercase;
-  padding: .75em 1em;
+  padding: 1em;
   text-align: right;
-  margin: auto;
+  @include span-columns(6);
+}
+
+.submit {
+  @include fill-parent();
   display: block;
+  @include media ($large-screen-up) {
+    @include shift(12);
+  }
 }
