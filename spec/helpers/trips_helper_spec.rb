@@ -10,6 +10,6 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe TripHelper, :type => :helper do
+RSpec.describe TripsHelper, :type => :helper do
 
 end

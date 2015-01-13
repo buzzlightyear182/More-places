@@ -14,7 +14,9 @@ PLANNED CHANGES:
 
 Write cleaner code, less complexity
 
-Do more tests, including integration tests
+Do more tests, including integration tests (features)
+
+Use factories and helpers in tests
 
 Improve ActiveRecord Model structure
 

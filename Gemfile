@@ -43,6 +43,7 @@ gem 'spring',        group: :development
 gem 'rails_12factor', group: :production
 
 gem 'rspec-rails', group: [:test, :development]
+gem 'shoulda-matchers', require: false, group: [:test, :development]
 gem 'pry', group: [:test, :development]
 gem 'byebug', group: [:test, :development]
 gem 'capybara', group: [:test, :development]

@@ -1,12 +1,10 @@
-<% content_for :title, "Dashboard" %>
-
-<p>Hello <%= @dashboard.user %></p>
+<% content_for :title, "Welcome, #{@dashboard.user}" %>
 
 <div>
-<h2>Your Trips</h2>
+<h2>Your Upcoming Trips</h2>
 <% @dashboard.trips.each do |trip| %>
   <%= link_to trip.name, trip_path(:id => trip.id) %><br/>
 <% end %>
 </div>
 
-<%= button_to "Start your own trip", new_trip_path, :class => 'change' %>
+<%= button_to "Start your own trip", new_trip_path, method: :get, :class => 'change' %>

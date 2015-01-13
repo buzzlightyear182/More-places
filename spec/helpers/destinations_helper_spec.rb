@@ -10,5 +10,5 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe DestinationHelper, :type => :helper do
+RSpec.describe DestinationsHelper, :type => :helper do
 end

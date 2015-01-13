@@ -2,32 +2,24 @@ require 'rails_helper'
 
 RSpec.describe Trip, :type => :model do
 
+  it { should belong_to(:destination) }
+  it { should belong_to(:user) }
+  it { should belong_to(:activity) }
+
+  it { should validate_presence_of(:destination) }
+  it { should validate_presence_of(:activity) }
+  it { should validate_presence_of(:from_date) }
+  it { should validate_presence_of(:to_date) }
+
   describe "should be valid when it" do
 
     it "has all complete details" do
       trip = build(:trip)
       expect(trip).to be_valid
     end
-
-    it "belongs to a user" do
-      @user = create(:user)
-      result = create(:trip, user: @user)
-      expect(@user.trips.first).to eq(result)
-    end
-
   end
 
   describe "should not be valid when it" do
-
-    it "doesn't have a destination" do
-      trip = build(:trip, destination: nil)
-      expect(trip).to be_invalid
-    end
-
-    it "doesn't have any activity" do
-      trip = build(:trip, activity: nil)
-      expect(trip).to be_invalid
-    end
 
     it "from_date has passed" do
       trip = build(:trip, from_date: Date.today-1)

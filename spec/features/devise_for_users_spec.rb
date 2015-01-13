@@ -12,12 +12,12 @@ RSpec.describe "Added Devise for User Authentication", :type => :feature do
   feature 'Existing users can login' do
     scenario 'using email and password' do
       login_with_email
-      expect(page).to have_content('Hello testuser')
+      expect(page).to have_content('Welcome, testuser')
     end
 
     scenario 'using username and password' do
       login_with_username
-      expect(page).to have_content('Hello testuser')
+      expect(page).to have_content('Welcome, testuser')
     end
   end
 

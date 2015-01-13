@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Activity, :type => :model do
 
+  it { should have_many(:trips) }
+
   before :each do
     Activity.destroy_all
     @activity = create(:activity)

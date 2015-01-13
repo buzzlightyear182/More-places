@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Destination, :type => :model do
 
+    it { should have_many(:trips) }
+
   before :each do
     Destination.destroy_all
     @destination = create(:destination)

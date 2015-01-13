@@ -19,6 +19,7 @@ require 'rspec/rails'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
+require 'shoulda/matchers'
 require 'capybara/rspec'
 require 'capybara/rails'
 require 'database_cleaner'

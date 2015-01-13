@@ -6,6 +6,10 @@ RSpec.describe TripsController, :type => :controller do
     login_user
   end
 
+  after :each do
+    logout_user
+  end
+
   describe "GET new" do
     it "returns http success" do
       get :new
@@ -14,11 +18,17 @@ RSpec.describe TripsController, :type => :controller do
   end
 
   describe "GET show" do
-    it "returns http success" do
-      trip = create(:trip)
+
+    before :each do
+      trip = create(:trip, user: @user)
       get :show, :id => trip.id
+    end
+
+    it "returns http success" do
       expect(response).to have_http_status(:success)
     end
+
+    it { should render_template('show') }
   end
 
 end
