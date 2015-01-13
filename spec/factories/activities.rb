@@ -1,9 +1,6 @@
 FactoryGirl.define do
   factory :activity do
-    name "Diving"
-  end
-
-  factory :activity2 do
-    name "Trekking"
+    name "Dive"
+    category "Water Sports"
   end
 end

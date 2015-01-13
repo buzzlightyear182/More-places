@@ -11,13 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery_ujs
 //= require jquery-ui/core
 //= require jquery-ui/widget
 //= require jquery-ui/position
 //= require jquery-ui/menu
 //= require jquery-ui/autocomplete
-//= require jquery_ujs
-
-//= require turbolinks
-//= require experiences
+//= require trips
 //= require dashboard

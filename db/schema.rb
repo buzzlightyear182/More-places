@@ -11,30 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141218144808) do
+ActiveRecord::Schema.define(version: 20150112123018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "activities", force: true do |t|
     t.string   "name"
+    t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "category"
   end
-
-  add_index "activities", ["category"], name: "index_activities_on_category", unique: true, using: :btree
 
   create_table "destinations", force: true do |t|
-    t.string   "name"
+    t.string   "city"
+    t.string   "country"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "country"
   end
 
-  add_index "destinations", ["country"], name: "index_destinations_on_country", unique: true, using: :btree
-
-  create_table "experiences", force: true do |t|
+  create_table "trips", force: true do |t|
     t.integer  "user_id"
     t.integer  "destination_id"
     t.date     "from_date"

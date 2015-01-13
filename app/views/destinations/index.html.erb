@@ -1,3 +1,7 @@
 <% @destinations.each do |d| %>
-  <h4><%= d.name %></h4> - <%= d.experiences.count %>
+  <ul><h4><%= d.city %>, <%= d.country %> (<%= d.trips.count %>)</h4>
+    <% d.trips.each do |trip| %>
+    <li><%= link_to trip.name, trip_path(:id => trip.id) %></li>
+    <% end %>
+  </ul>
 <% end %>

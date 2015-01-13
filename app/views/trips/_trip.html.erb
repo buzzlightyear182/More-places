@@ -1,0 +1,13 @@
+<%= div_for trip do %>
+  <h2>Going to <%= trip.destination.city %>, <%= trip.destination.country %></h2><br/>
+  From: <%= trip.from_date %><br/>
+  To: <%= trip.to_date %><br/>
+  Activity: <%= trip.activity.name %><br/>
+  Description: <%= trip.description %><br/>
+  <% unless trip.capacity.nil? %>
+    Capacity: <%= trip.capacity %><br/>
+  <% end %>
+
+<%= show_controls_for trip %>
+
+<% end %>

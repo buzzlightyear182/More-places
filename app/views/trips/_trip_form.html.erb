@@ -1,33 +1,39 @@
-<%= form_for @experience do |f| %>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
+<%= form_for @trip do |f| %>
+  <%= f.hidden_field :user_id, :value => current_user.id %></%>
   <div class="trip_form_field">
     <h4>Where do you want to go?</h4>
     <%= f.label :destination_name %>
-    <%= f.text_field :destination_name %>
+    <%= f.text_field :destination_name, placeholder: "City, Country" %>
   </div>
+
   <div class="trip_form_field">
-    <h4>What is your main activity?</h4>
+    <h4>What do you plan to do?</h4>
     <%= f.label :activity_name %>
-    <%= f.text_field :activity_name %>
+    <%= f.text_field :activity_name, placeholder: "Ex. Dive, Trek, Museum Visit" %>
   </div>
+
   <div class="trip_form_field">
     <h4>What's your schedule?</h4>
     <%= f.label :from_date %>
     <%= f.date_field :from_date %>
-    <br/>
     <%= f.label :to_date %>
     <%= f.date_field :to_date %>
   </div>
-  <div class="form-group">
+
+  <div class="trip_form_field">
+   <h4>Say something about your trip</h4>
     <%= f.label :description %>
-    <%= f.text_area :description, placeholder: "Say something about your trip" %>
+    <%= f.text_area :description, placeholder: "Plans, Itinerary, Meeting Place, Time, etc" %>
   </div>
+
   <div class="trip_form_field">
     <h4>Is there a capacity for your trip? (Optional)</h4>
     <em><%= f.label :capacity %></em>
     <%= f.text_area :capacity, placeholder: 'Leave blank if no maximum capacity' %>
   </div>
-  <div>
+
+  <div class="trip_form_field">
     <%= f.submit "Submit", :class => "submit" %>
   </div>
 <% end %>
+

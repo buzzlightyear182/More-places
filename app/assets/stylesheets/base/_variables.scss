@@ -1,7 +1,7 @@
 // Typography
 $sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $serif: 'Sanchez', $georgia, serif;
-$base-font-family: $serif;
+$base-font-family: $sans-serif;
 $header-font-family: $base-font-family;
 
 // Font Sizes
@@ -31,14 +31,14 @@ $light-gray: #DDD;
 $light-red: #FBE3E4;
 $light-yellow: #FFF6BF;
 $light-green: #E6EFC2;
-$turqoise: #00BCD4;
+$turquoise: #00BCD4;
 
 // Background Color
-$base-background-color: white;
+$base-background-color: #FFFFFF;
 
 // Font Colors
 $base-font-color: $dark-gray;
-$base-accent-color: $turqoise;
+$base-accent-color: $turquoise;
 
 // Link Colors
 $base-link-color: $base-accent-color;
