@@ -2,6 +2,8 @@ class Trip < ActiveRecord::Base
   belongs_to :user
   belongs_to :destination
   belongs_to :activity
+  has_many :participations, dependent: :destroy
+  has_many :participants, through: :participations, source: :user
 
   validates :user, presence: true
   validates :destination, presence: true
@@ -53,6 +55,14 @@ class Trip < ActiveRecord::Base
 
   def activity_name=(name)
     self.activity = Activity.create_with(category: "Others").find_or_create_by(name: name) if name.present?
+  end
+
+  def confirmed_participants
+    self.participations.where(confirmed: true)
+  end
+
+  def pending_participants
+    self.participations.where(confirmed: false)
   end
 
 end
