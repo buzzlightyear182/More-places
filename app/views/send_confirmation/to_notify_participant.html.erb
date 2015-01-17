@@ -1,0 +1,9 @@
+<h3>Hello there! <%= @participant.username %></h3>
+
+<p><%= @trip.organizer.username %> just added you to his trip:</p>
+<h4><%= @trip.activity_name %> in <%= @trip.destination_name %></h4>
+
+<p>You can see the trip details below:</p>
+<button><%= link_to "Show me this trip!", @link %></button>
+
+<p>Thanks a lot!</p>

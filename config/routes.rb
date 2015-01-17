@@ -11,7 +11,11 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: :show
 
-  resources :trips
+  resources :trips do
+    resources :participations, only: [:create, :destroy]
+  end
+
+  get 'confirm_participant/:id' => 'participations#update'
 
   resources :destinations, only: :index
   resources :activities, only: :index

@@ -8,6 +8,15 @@
     Capacity: <%= trip.capacity %><br/>
   <% end %>
 
+<div>
+  <%= content_tag(:h4, "Participants") %>
+  <%= display_confirmed_participants_of trip %>
+</div>
+
+<div>
+  <%= display_pending_participants_of trip %>
+</div>
+
 <%= show_controls_for trip %>
 
 <% end %>

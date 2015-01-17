@@ -20,14 +20,14 @@ Destination.create ([{city: 'Taipei', country: 'Taiwan'}, {city: 'London', count
 
 Activity.create ([{name: 'Diving', category: "Water Sports"}, {name: 'Surfing',  category: "Water Sports"}, {name: 'Beach Chillout', category: "Water Sports"}, {name: 'Trekking', category: "Outdoors"}, {name: 'Skiing', category: "Outdoors"}, {name: 'Snowboarding', category: "Outdoors"}, {name: 'Sightseeing', category: "Tourism/Leisure"}, {name: 'Food Trip', category: "Tourism/Leisure"}, {name: 'Bar and Nightlife', category: "Tourism/Leisure"}, {name: 'Shopping', category: "Tourism/Leisure"}, {name: 'Field Trip', category: "Educational"}, {name: 'Hackathon', category: "Educational"},{name: 'Study Group', category: "Educational"}, {name: 'Volunteer', category: "Volunteer"}, {name: 'Photography', category: "Hobbies/Interests"}, {name: 'Arts & Crafts', category: "Hobbies/Interests"}, {name: 'Illustration', category: "Hobbies/Interests"}, {name: 'Pilgrimage', category: "Religious"}, {name: 'Religious Site Visit', category: "Religious"}])
 
-capacity = ["",1,2,3,4,5,6,7,8,9,10]
+capacity = [nil,1,2,3,4,5,6,7,8,9,10]
 
 (1..20).each do |exp_index|
-  trip = Trip.create user: User.find(rand(1..10)), destination: Destination.find(rand(1..16)),
+  trip = Trip.create organizer: User.find(rand(1..10)), destination: Destination.find(rand(1..16)),
     activity: Activity.find(rand(1..19)),
     from_date: Date.today+(rand(1..5)),
     to_date: Date.today+(rand(6..10)),
     description: "This is Trip no. #{exp_index} created through seeds",
     capacity: capacity[rand(0..10)]
-    # puts trip.errors.messages
+    puts trip.errors.messages
 end

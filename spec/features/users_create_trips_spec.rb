@@ -7,6 +7,10 @@ RSpec.describe "Create Trips", :type => :feature do
     click_button 'Start your own trip'
   end
 
+  # after :each do
+  #   click_link 'Logout'
+  # end
+
   feature 'Users can go to new Trips page' do
     scenario 'from dashboard' do
       expect(page).to have_content("Create a new trip!")
@@ -32,6 +36,7 @@ RSpec.describe "Create Trips", :type => :feature do
       click_button "Cancel this"
       expect(page).to have_content('Welcome,')
     end
+
   end
 
 end

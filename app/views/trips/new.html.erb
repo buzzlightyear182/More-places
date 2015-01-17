@@ -1,3 +1,5 @@
 <% content_for :title, "Create a new trip!" %>
-<button id="next_button", class="button">NEXT >></button>
+<button id="next_button", class="button">
+  <%= fa_icon "chevron-circle-right", text: "NEXT", right: true %>
+</button>
 <%= render 'trip_form' %>
