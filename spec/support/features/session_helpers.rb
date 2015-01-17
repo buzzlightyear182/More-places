@@ -26,6 +26,14 @@ module Features
     click_button 'Log in'
   end
 
+  def login_participant
+    user = create(:user, username: 'joiner')
+    visit new_user_session_path
+    fill_in 'user_login', with: user.username
+    fill_in 'Password', with: user.password
+    click_button 'Log in'
   end
 
+
+  end
 end

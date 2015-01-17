@@ -1,4 +1,3 @@
-require 'pry'
 module TripsHelper
 
   def show_controls_for trip
@@ -25,7 +24,6 @@ module TripsHelper
     button_to "Join trip", trip_participations_path(:trip_id => trip.id), method: :post, :class => 'change'
   end
 
-
   def display_confirmed_participants_of trip
     trip.confirmed_participants.map { |participant|
       link_to participant.username, ""
@@ -33,9 +31,15 @@ module TripsHelper
   end
 
   def display_pending_participants_of trip
-    trip.pending_participants.map { |participant|
-      render partial: 'participant', object: participant
-    }.join("<br/>").html_safe()
+    unless trip.pending_participants.nil?
+      content_tag(:h5, "Pending: #{trip.pending_participants.count}")
+    end
   end
+
+  # def get_pending_participants_of trip
+  #   trip.pending_participants.map { |participant|
+  #       render partial: 'participant', object: participant
+  #     }.join("<br/>").html_safe()
+  # end
 
 end

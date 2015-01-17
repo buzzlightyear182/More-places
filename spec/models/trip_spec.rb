@@ -6,6 +6,10 @@ RSpec.describe Trip, :type => :model do
   it { should belong_to(:organizer) }
   it { should belong_to(:activity) }
 
+  it { should have_many(:participations) }
+  it { should have_many(:confirmed_participants) }
+  it { should have_many(:pending_participants) }
+
   it { should validate_presence_of(:organizer) }
   it { should validate_presence_of(:destination) }
   it { should validate_presence_of(:activity) }
@@ -30,6 +34,15 @@ RSpec.describe Trip, :type => :model do
     it "to_date is before from_date" do
       trip = build(:trip, from_date: Date.today+1, to_date: Date.today-1)
       expect(trip).to be_invalid
+    end
+
+  end
+
+  describe "when created" do
+
+    it 'should automatically create a participation' do
+      trip = create(:trip)
+      expect(Participation.is_confirmed.last.trip_id).to eq(trip.id)
     end
 
   end
