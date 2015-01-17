@@ -3,9 +3,10 @@ require 'rails_helper'
 RSpec.describe Trip, :type => :model do
 
   it { should belong_to(:destination) }
-  it { should belong_to(:user) }
+  it { should belong_to(:organizer) }
   it { should belong_to(:activity) }
 
+  it { should validate_presence_of(:organizer) }
   it { should validate_presence_of(:destination) }
   it { should validate_presence_of(:activity) }
   it { should validate_presence_of(:from_date) }

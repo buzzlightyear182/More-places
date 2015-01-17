@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Join Trips", :type => :feature do
+RSpec.describe "Joining trips", :type => :feature do
 
   before :each do
     login_with_username
@@ -12,8 +12,7 @@ RSpec.describe "Join Trips", :type => :feature do
     scenario 'on show trip page' do
       click_link 'Logout'
       sign_up_with 'joiner','joiner@example.com', 'password'
-      visit '/trips'
-      click_link 'Trip No'
+      visit '/trips/1'
       expect(page).to have_content("Join trip")
     end
   end

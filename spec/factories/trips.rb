@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :trip do
-    user
+    organizer
     destination
     activity
     from_date Date.today+2

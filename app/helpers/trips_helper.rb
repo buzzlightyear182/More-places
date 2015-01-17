@@ -1,14 +1,12 @@
+require 'pry'
 module TripsHelper
+
   def show_controls_for trip
-    if current_user.trips.include? trip
+    if trip.owner_is? current_user
       display_owner_controls_of trip
     else
-      check_if_joinable? trip
+      allow_join trip if trip.joinable_by? current_user
     end
-  end
-
-  def check_if_joinable? trip
-    allow_join trip if capacity.nil?
   end
 
   def display_owner_controls_of trip
@@ -24,7 +22,20 @@ module TripsHelper
   end
 
   def allow_join trip
-    button_to "Join trip", :class => 'change'
+    button_to "Join trip", trip_participations_path(:trip_id => trip.id), method: :post, :class => 'change'
+  end
+
+
+  def display_confirmed_participants_of trip
+    trip.confirmed_participants.map { |participant|
+      link_to participant.username, ""
+    }.join("<br/>").html_safe()
+  end
+
+  def display_pending_participants_of trip
+    trip.pending_participants.map { |participant|
+      render partial: 'participant', object: participant
+    }.join("<br/>").html_safe()
   end
 
 end
