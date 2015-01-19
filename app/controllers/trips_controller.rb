@@ -43,7 +43,7 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:user_id, :destination_name, :activity_name, :from_date, :to_date, :description, :capacity)
+    params.require(:trip).permit(:user_id, :destination_name, :activity_name, :google_places_id, :from_date, :to_date, :description, :capacity)
   end
 
   def to_partial_path

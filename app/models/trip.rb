@@ -57,6 +57,15 @@ class Trip < ActiveRecord::Base
     self.destination = Destination.find_or_create_by(city: destination_array.first, country: destination_array.last) if name.present?
   end
 
+  def google_places_id
+    destination.google_places_id.try(:google_places_id)
+  end
+
+
+  def google_places_id=(google_places_id)
+    self.destination.update_attributes(google_places_id: google_places_id)
+  end
+
   def activity_name
     activity.try(:name)
   end

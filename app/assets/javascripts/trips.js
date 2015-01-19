@@ -12,10 +12,11 @@ $(document).ready(function() {
     google.maps.event.addListener(autocomplete, 'place_changed', function(){
 
       var place = autocomplete.getPlace();
-      console.log(place);
+      // console.log(place.id);
 
       var address = '';
       var country = '';
+      document.getElementById('trip_google_places_id').value = place.id;
 
       if (place.address_components) {
         for (i=0; i < place.address_components.length; i++){
