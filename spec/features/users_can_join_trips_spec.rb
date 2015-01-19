@@ -23,7 +23,7 @@ RSpec.describe "Joining trips", :type => :feature do
       participant = User.last
       visit trip_path(:id => trip.id)
       click_on 'Join trip'
-      expect(page).to have_content(participant.username)
+      expect(page).to have_content("Pending: 1")
     end
   end
 

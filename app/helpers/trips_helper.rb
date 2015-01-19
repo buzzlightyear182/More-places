@@ -31,8 +31,10 @@ module TripsHelper
   end
 
   def display_pending_participants_of trip
-    unless trip.pending_participants.nil?
+    unless trip.pending_participants.count == 0
       content_tag(:h5, "Pending: #{trip.pending_participants.count}")
+    else
+      content_tag(:h6, "No pending participants yet, join in!")
     end
   end
 
