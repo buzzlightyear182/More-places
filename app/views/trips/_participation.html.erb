@@ -1,2 +1,4 @@
-<%= link_to participation.user.username, "" %>
-<%= button_to "Approve", confirm_participant_path(participation.id) %>
+<div>
+  <%= link_to participation.user.username, "" %>
+  <%= show_button_for participation %>
+</div>

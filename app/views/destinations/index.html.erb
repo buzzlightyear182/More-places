@@ -2,7 +2,9 @@
   <ul><h4><%= d.city %>, <%= d.country %> (<%= d.trips.count %>)</h4>
     <% d.trips.each do |trip| %>
     <li><%= link_to trip.name, trip_path(:id => trip.id) %>
-    <p><%= trip.participations.is_confirmed.count %></p></li>
+    <p>Confirmed: <%= trip.participations.is_confirmed.count %></p>
+    <p>From Date: <%= trip.from_date %>, To Date: <%= trip.to_date %></p>
+    </li>
     <% end %>
   </ul>
 <% end %>

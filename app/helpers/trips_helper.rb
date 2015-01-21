@@ -25,12 +25,12 @@ module TripsHelper
   end
 
   def display_confirmed_participants_of trip
-    render partial:'trips/participant', collection: trip.confirmed_participants
+    render partial:'trips/participation', collection: trip.confirmed_participations
   end
 
   def count_pending_participants_of trip
-    unless trip.pending_participants.count == 0
-      content_tag(:h5, "Pending: #{trip.pending_participants.count}")
+    unless trip.pending_participations.count == 0
+      content_tag(:h5, "Pending: #{trip.pending_participations.count}")
     else
       content_tag(:h6, "No pending participants yet")
     end
@@ -41,6 +41,5 @@ module TripsHelper
       render partial:'trips/participation', collection: trip.pending_participations
     end
   end
-
 
 end

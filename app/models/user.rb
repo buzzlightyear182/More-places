@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   attr_accessor :login
   has_many :trips, dependent: :destroy
   has_many :participations, dependent: :destroy
+  has_many :reviews
   # has_many :trips, through: :participations, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
