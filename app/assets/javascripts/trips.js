@@ -12,11 +12,11 @@ $(document).ready(function() {
     google.maps.event.addListener(autocomplete, 'place_changed', function(){
 
       var place = autocomplete.getPlace();
-      // console.log(place.id);
+      console.log(place);
 
       var address = '';
       var country = '';
-      document.getElementById('trip_google_places_id').value = place.id;
+      document.getElementById('trip_google_places_id').value = place.place_id;
 
       if (place.address_components) {
         for (i=0; i < place.address_components.length; i++){
@@ -81,3 +81,9 @@ $(document).ready(function() {
   };
 
 });
+
+// var placeIDs = document.querySelectorAll('.placeId');
+
+//   for (i = 0; i < placeIDs.length; i++){
+//     getPlaceFromGoogle(placeIDs[i].innerHTML);
+//   }

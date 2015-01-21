@@ -3,7 +3,10 @@
 <div>
 <h2>Your Upcoming Trips</h2>
 <% @dashboard.trips.each do |trip| %>
-  <%= link_to trip.name, trip_path(:id => trip.id) %><br/>
+  <div>
+  <%= link_to trip.name, trip_path(:id => trip.id) %>
+  <p class="placeId"><%= trip.destination.google_places_id %></p>
+  </div>
 <% end %>
 </div>
 
