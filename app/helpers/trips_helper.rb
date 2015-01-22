@@ -25,7 +25,7 @@ module TripsHelper
   end
 
   def display_confirmed_participants_of trip
-    render partial:'trips/participation', collection: trip.confirmed_participations
+    render partial:'participations/participation', collection: trip.confirmed_participations
   end
 
   def count_pending_participants_of trip
@@ -38,7 +38,7 @@ module TripsHelper
 
   def display_pending_participations_of trip
     unless trip.pending_participations.count == 0
-      render partial:'trips/participation', collection: trip.pending_participations
+      render partial:'participations/participation', collection: trip.pending_participations
     end
   end
 
