@@ -7,8 +7,8 @@ RSpec.describe Trip, :type => :model do
   it { should belong_to(:activity) }
 
   it { should have_many(:participations) }
-  it { should have_many(:confirmed_participants) }
-  it { should have_many(:pending_participants) }
+  it { should have_many(:confirmed_participations) }
+  it { should have_many(:pending_participations) }
 
   it { should validate_presence_of(:organizer) }
   it { should validate_presence_of(:destination) }
