@@ -4,7 +4,7 @@
     <h4><%= fa_icon "plane", text: "Where do you want to go?", right: true %></h4>
     <%= f.label :destination_name %>
     <%= f.text_field :destination_name, placeholder: "City, Country" %>
-    <%= f.hidden_field :google_places_id, :value => @trip.google_places_id %></%>
+    <%= f.hidden_field :google_places_id, :value => nil %></%>
   </div>
 
   <div class="trip_form_field">

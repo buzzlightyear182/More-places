@@ -5,11 +5,13 @@ class Trip < ActiveRecord::Base
   has_many :participations
   has_many :participants, through: :participations, source: :user, dependent: :destroy
 
+  has_many :reviews, through: :participations
+
   has_many :pending_participations, -> {is_pending}, :class_name => 'Participation'
-  has_many :pending_participants, through: :pending_participations, source: :user
+  # has_many :pending_participants, through: :pending_participations, source: :user
 
   has_many :confirmed_participations, -> {is_confirmed}, :class_name => 'Participation'
-  has_many :confirmed_participants, through: :confirmed_participations, source: :user
+  # has_many :confirmed_participants, through: :confirmed_participations, source: :user
 
   validates :organizer, presence: true
   validates :destination, presence: true
@@ -88,11 +90,15 @@ class Trip < ActiveRecord::Base
   end
 
   def has_open_slots
-    (self.capacity - self.participations.is_pending.count) > 0
+    (self.capacity - self.participations.count) > 0
   end
 
   def has_not_passed
     self.from_date > Date.today
+  end
+
+  def has_finished?
+    self.to_date < Date.today
   end
 
   private

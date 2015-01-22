@@ -15,7 +15,11 @@ Rails.application.routes.draw do
     resources :participations, only: [:create, :destroy]
   end
 
-  get 'confirm_participant/:id' => 'participations#update'
+  resources :participations do
+    resources :reviews, only: [:new, :create, :edit, :update, :destroy]
+  end
+
+  get 'confirm_participant/:id' => 'participations#update', as: :confirm_participant
 
   resources :destinations, only: :index
   resources :activities, only: :index

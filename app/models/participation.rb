@@ -1,6 +1,7 @@
 class Participation < ActiveRecord::Base
   belongs_to :user
   belongs_to :trip
+  has_many :reviews
 
   scope :is_confirmed, -> {where(confirmed?: true)}
   scope :is_pending, -> {where(confirmed?: false)}
@@ -9,5 +10,9 @@ class Participation < ActiveRecord::Base
   validates :trip, presence: true
   validates :confirmed?, inclusion: { in: [true, false] }
   validates_associated :trip
+
+  def has_review_by author
+    self.reviews.where(author: author)
+  end
 
 end

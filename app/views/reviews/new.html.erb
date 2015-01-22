@@ -1,0 +1,14 @@
+<h4>You are reviewing:
+<%= @participation.user.username %> for <%= @participation.trip.name %></h4>
+<%= form_for [@participation, @review] do |f| %>
+  <%= f.hidden_field :author_id, value: current_user.id %>
+  <div>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+  </div>
+  <div>
+  <%= f.label :score %>
+  <p>1<%= f.range_field :score, min: 1, max: 10, step: 1 %>10</p>
+  </div>
+  <%= f.submit "Save" %>
+<% end %>

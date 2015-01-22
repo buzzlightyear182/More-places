@@ -25,23 +25,21 @@ module TripsHelper
   end
 
   def display_confirmed_participants_of trip
-    trip.confirmed_participants.map { |participant|
-      link_to participant.username, ""
-    }.join("<br/>").html_safe()
+    render partial:'participations/participation', collection: trip.confirmed_participations
   end
 
-  def display_pending_participants_of trip
-    unless trip.pending_participants.count == 0
-      content_tag(:h5, "Pending: #{trip.pending_participants.count}")
+  def count_pending_participants_of trip
+    unless trip.pending_participations.count == 0
+      content_tag(:h5, "Pending: #{trip.pending_participations.count}")
     else
       content_tag(:h6, "No pending participants yet")
     end
   end
 
-  # def get_pending_participants_of trip
-  #   trip.pending_participants.map { |participant|
-  #       render partial: 'participant', object: participant
-  #     }.join("<br/>").html_safe()
-  # end
+  def display_pending_participations_of trip
+    unless trip.pending_participations.count == 0
+      render partial:'participations/participation', collection: trip.pending_participations
+    end
+  end
 
 end
