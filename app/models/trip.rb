@@ -90,7 +90,7 @@ class Trip < ActiveRecord::Base
   end
 
   def has_open_slots
-    (self.capacity - self.participations.is_pending.count) > 0
+    (self.capacity - self.participations.count) > 0
   end
 
   def has_not_passed
@@ -98,7 +98,7 @@ class Trip < ActiveRecord::Base
   end
 
   def has_finished?
-    self.to_date > Date.today
+    self.to_date < Date.today
   end
 
   private

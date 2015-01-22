@@ -3,6 +3,7 @@
     <% d.trips.each do |trip| %>
     <li><%= link_to trip.name, trip_path(:id => trip.id) %>
     <p>Confirmed: <%= trip.participations.is_confirmed.count %></p>
+    <p>Pending: <%= trip.participations.is_pending.count %></p>
     <p>From Date: <%= trip.from_date %>, To Date: <%= trip.to_date %></p>
     </li>
     <% end %>

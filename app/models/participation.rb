@@ -11,4 +11,8 @@ class Participation < ActiveRecord::Base
   validates :confirmed?, inclusion: { in: [true, false] }
   validates_associated :trip
 
+  def has_review_by author
+    self.reviews.where(author: author)
+  end
+
 end
