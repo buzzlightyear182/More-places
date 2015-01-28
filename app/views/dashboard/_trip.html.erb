@@ -1,4 +1,5 @@
 <%= link_to trip.name, trip_path(:id => trip.id) %>
 <p class="placeId"><%= trip.destination.google_places_id %></p>
 <p class="placeId"><%= trip.from_date %> to <%= trip.to_date %></p>
-<%= display_pending_approvals_for trip %>
+<%= display_participants_of trip.confirmed_participations %>
+<hr>

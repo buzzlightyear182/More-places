@@ -24,8 +24,8 @@ module TripsHelper
     button_to "Join trip", trip_participations_path(:trip_id => trip.id), method: :post, :class => 'change'
   end
 
-  def display_confirmed_participants_of trip
-    render partial:'participations/participation', collection: trip.confirmed_participations
+  def display_participants_of trip_participation_list
+    render partial:'participations/participation', collection: trip_participation_list
   end
 
   def count_pending_participants_of trip
@@ -33,12 +33,6 @@ module TripsHelper
       content_tag(:h5, "Pending: #{trip.pending_participations.count}")
     else
       content_tag(:h6, "No pending participants yet")
-    end
-  end
-
-  def display_pending_approvals_for trip
-    if trip.has_not_passed
-      render partial:'participations/participation', collection: trip.pending_participations
     end
   end
 

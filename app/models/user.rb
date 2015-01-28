@@ -5,7 +5,9 @@ class User < ActiveRecord::Base
   has_many :trips, dependent: :destroy
   has_many :participations, dependent: :destroy
   has_many :reviews
-  # has_many :trips, through: :participations, dependent: :destroy
+
+  has_many :confirmed_participations, -> {is_confirmed}, :class_name => 'Participation'
+  has_many :confirmed_trips, through: :confirmed_participations, source: :trip
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,  :authentication_keys => [:login]

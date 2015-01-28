@@ -8,8 +8,8 @@ class Dashboard
     @user.username
   end
 
-  def trips
-    @user.trips
+  def confirmed_trips
+    @user.confirmed_trips
   end
 
 end
