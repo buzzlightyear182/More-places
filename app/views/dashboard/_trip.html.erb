@@ -1,5 +1,9 @@
 <%= link_to trip.name, trip_path(:id => trip.id) %>
 <p class="placeId"><%= trip.destination.google_places_id %></p>
 <p class="placeId"><%= trip.from_date %> to <%= trip.to_date %></p>
-<%= display_participants_of trip.confirmed_participations %>
+<% if (trip.has_finished?) || (trip.is_ongoing?) %>
+  <%= display_participants_of trip.confirmed_participations %>
+<% elsif (trip.user_id == current_user.id) %>
+  <%= display_participants_of trip.pending_participations %>
+<% end %>
 <hr>

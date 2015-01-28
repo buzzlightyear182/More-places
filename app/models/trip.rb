@@ -102,8 +102,16 @@ class Trip < ActiveRecord::Base
   end
 
   def has_finished?
-    (self.to_date < Date.today)
+    self.to_date < Date.today
   end
+
+  def is_ongoing?
+    (self.to_date >= Date.today) && (self.from_date <= Date.today)
+  end
+
+  # Trip UPCOMING --> APPROVE pending participants
+  # Trip ONGOING --> LIST only confirmed participants
+  # Trip FINISHED --> REVIEW only confirmed participants
 
   private
 
