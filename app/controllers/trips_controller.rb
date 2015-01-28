@@ -31,8 +31,14 @@ class TripsController < ApplicationController
 
   def update
     @trip = Trip.find(params[:id])
-    @trip.update_attributes trip_params
-    redirect_to action: 'show', id: @trip.id
+    if @trip.update_attributes trip_params
+      flash[:success] = "Trip has been updated!"
+      redirect_to action: 'show', id: @trip.id
+    else
+      @errors = @trip.errors.full_messages
+      flash[:error] = @errors.first
+      redirect_to action: 'edit'
+    end
   end
 
   def destroy

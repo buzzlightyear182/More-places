@@ -36,8 +36,8 @@ module TripsHelper
     end
   end
 
-  def display_pending_participations_of trip
-    unless trip.pending_participations.count == 0
+  def display_pending_approvals_for trip
+    if trip.has_not_passed
       render partial:'participations/participation', collection: trip.pending_participations
     end
   end

@@ -1,14 +1,18 @@
 <% content_for :title, "Welcome, #{@dashboard.user}" %>
 
 <div>
-<h2>Your Upcoming Trips</h2>
-<% @dashboard.trips.each do |trip| %>
-  <div>
-  <%= link_to trip.name, trip_path(:id => trip.id) %>
-  <p class="placeId"><%= trip.destination.google_places_id %></p>
-  <%= display_pending_participations_of trip %>
-  </div>
-<% end %>
+  <%= content_tag(:h2, "Your Upcoming Trips") %>
+  <%= display_trips @dashboard.trips.upcoming %>
+</div>
+
+<div>
+  <%= content_tag(:h2, "Your Ongoing Trips") %>
+  <%= display_trips @dashboard.trips.ongoing %>
+</div>
+
+<div>
+  <%= content_tag(:h2, "Your Finished Trips") %>
+  <%= display_trips @dashboard.trips.finished %>
 </div>
 
 <%= button_to "Start your own trip", new_trip_path, method: :get, :class => 'change' %>

@@ -12,6 +12,7 @@ class ParticipationsController < ApplicationController
     @participation =  Participation.find(params[:id])
     @participation.update_attributes!(confirmed?: true)
     SendConfirmation.to_notify_participant(@participation).deliver
+    flash[:success] = "Participant has been confirmed."
     redirect_to trip_path(:id => @participation.trip.id)
   end
 end

@@ -13,6 +13,10 @@ class Trip < ActiveRecord::Base
   has_many :confirmed_participations, -> {is_confirmed}, :class_name => 'Participation'
   # has_many :confirmed_participants, through: :confirmed_participations, source: :user
 
+  scope :finished, -> { where('to_date < ?', Date.today) }
+  scope :upcoming, -> { where('from_date > ?', Date.today) }
+  scope :ongoing, -> { where('to_date >= ?', Date.today).where('from_date <= ?', Date.today)}
+
   validates :organizer, presence: true
   validates :destination, presence: true
   validates :activity, presence: true
@@ -98,7 +102,7 @@ class Trip < ActiveRecord::Base
   end
 
   def has_finished?
-    self.to_date < Date.today
+    (self.to_date < Date.today)
   end
 
   private
