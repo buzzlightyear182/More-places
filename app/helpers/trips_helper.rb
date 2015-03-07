@@ -9,7 +9,11 @@ module TripsHelper
   end
 
   def display_owner_controls_of trip
-    allow_update(trip) + allow_destroy(trip)
+    if trip.has_finished?
+      return
+    else
+      allow_update(trip) + allow_destroy(trip)
+    end
   end
 
   def allow_update trip
