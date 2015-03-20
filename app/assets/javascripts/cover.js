@@ -40,7 +40,7 @@ function checkCoverElement(target){
 }
 
 function checkTileElement(event){
-  if (event.target.nodeName === "H4"){
+  if (event.target.nodeName === "H2"){
     return event.target.parentElement.parentElement;
   }
   else {

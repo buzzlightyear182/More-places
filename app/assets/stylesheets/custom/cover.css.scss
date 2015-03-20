@@ -78,6 +78,13 @@ body {
   }
 }
 
+#map, #postcard {
+  @include media($mobile-screen-up){
+    margin-right: 0px;
+    float: right;
+  }
+}
+
 //Second row, bottom
 #postcard, #mail {
   @include media($mobile) {
@@ -109,5 +116,9 @@ body {
   color: rgba(0,0,0,0.8);
   padding: inherit;
   display: none;
-}
 
+  h2 {
+    text-align: center;
+    padding-top: 20px;
+  }
+}
