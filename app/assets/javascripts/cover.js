@@ -25,6 +25,7 @@ $('.cover').mouseleave(function(event){
 
 $('.hover-tile-hidden').mouseleave(function(event){
   var target = checkTileElement(event);
+  console.log(target);
   $(target).removeClass('animated infinite pulse');
 
   toggleHoverTile(target, "none", "animated fadeInUp", "animated fadeOutDown")
@@ -41,16 +42,19 @@ function checkCoverElement(target){
 
 function checkTileElement(event){
   if (event.target.nodeName === "H2"){
-    return event.target.parentElement.parentElement;
+    return event.target.parentElement.parentElement.parentElement;
+  }
+  else if (event.target.nodeName === "A"){
+    return event.target.parentElement
   }
   else {
-    return event.target.parentElement;
+    return event.target.parentElement.parentElement;
   }
 }
 
 function toggleHoverTile(target, display, classToRemove, classToAdd){
 
-  var tile = target.children[1];
+  var tile = target.children[1].children[0];
   $(tile).removeClass(classToRemove).addClass(classToAdd).css("display", display);
 
   getHeight(target, tile);

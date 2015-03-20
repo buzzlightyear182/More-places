@@ -1,16 +1,20 @@
-body {
-  background-color: rgba(219,239,240,1.0);
-}
-
 .container {
   @include outer-container;
-  @include clearfix;
+  // @include clearfix;
 }
 
 .row {
-  @include span-columns(12);
+  width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+.row:first-child {
+  background-color: rgba(219,239,240,1.0);
+}
+
+.row:nth-child(2){
+  background-color: #4C9BA8;
 }
 
 .cover {
@@ -121,4 +125,8 @@ body {
     text-align: center;
     padding-top: 20px;
   }
+}
+
+.header {
+  padding: 50px 0px;
 }
