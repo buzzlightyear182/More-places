@@ -1,0 +1,113 @@
+body {
+  background-color: rgba(219,239,240,1.0);
+}
+
+.container {
+  @include outer-container;
+  @include clearfix;
+}
+
+.row {
+  @include span-columns(12);
+  height: 100%;
+  overflow: hidden;
+}
+
+.cover {
+  @include span-columns(4);
+  padding: 10px;
+  @include media($mobile) {
+    width: 70%;
+    margin: auto;
+    @include clearfix;
+    float: center;
+  }
+}
+
+.cover:last-child {
+  @include media($mobile) {
+    margin: auto !important;
+  }
+}
+
+#title h1 {
+  text-align: center;
+  color: #4C9BA8;
+  margin: auto;
+  vertical-align: middle;
+
+  @include media($mobile) {
+    padding-top: 0px;
+  }
+  @include media($medium-screen-down) {
+    font-size: 2em;
+    padding-top: 20px;
+  }
+  @include media($medium-screen-up) {
+    font-size: 3em;
+    // padding-top: 20px;
+  }
+  @include media($extra-large-screen-up) {
+    font-size: 4em;
+    // padding-top: 40px;
+  }
+}
+
+#title .subtitle {
+  text-align: center;
+  color: #4C9BA8;
+  margin: auto;
+  padding: 0px;
+
+  @include media($medium-screen-down) {
+    font-size: small;
+  }
+}
+
+//Second row, first
+#activities {
+  margin-top: 15px;
+}
+
+//Second row, right
+#notes {
+  @include media($mobile-screen-up){
+    margin-top: 10px;
+    margin-right: 0px;
+    float: right;
+  }
+}
+
+//Second row, bottom
+#postcard, #mail {
+  @include media($mobile) {
+    margin-top: 20px;
+  }
+  @include media($mobile-screen-up) {
+    margin-top: -130px;
+  }
+  @include media($large-screen-up) {
+    margin-top: -160px;
+  }
+  @include media($extra-large-screen-up) {
+    margin-top: -190px;
+  }
+  @include media($xxl-screen) {
+    margin-top: -210px;
+  }
+}
+
+//Second row, last
+#postcard {
+  @include media($mobile-screen-up){
+    float: right;
+  }
+}
+
+.hover-tile-hidden {
+  background-color: rgba(255,255,255,0.8);
+  color: rgba(0,0,0,0.8);
+  padding: inherit;
+  display: none;
+}
+

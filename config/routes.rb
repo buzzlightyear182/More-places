@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root 'dashboard#show', via: :get
+  root 'static#home', via: :get
 
   # authenticated :user do
   #   root :to => "dashboard#index"
