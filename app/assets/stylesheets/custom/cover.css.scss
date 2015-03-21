@@ -1,6 +1,7 @@
 .container {
   @include outer-container;
-  // @include clearfix;
+  @include clearfix;
+  padding: 5px 0;
 }
 
 .row {
@@ -19,7 +20,6 @@
 
 .cover {
   @include span-columns(4);
-  padding: 10px;
   @include media($mobile) {
     width: 70%;
     margin: auto;
@@ -49,11 +49,9 @@
   }
   @include media($medium-screen-up) {
     font-size: 3em;
-    // padding-top: 20px;
   }
   @include media($extra-large-screen-up) {
-    font-size: 4em;
-    // padding-top: 40px;
+    font-size: 3.6em;
   }
 }
 
@@ -68,15 +66,9 @@
   }
 }
 
-//Second row, first
-#activities {
-  margin-top: 15px;
-}
-
 //Second row, right
 #notes {
   @include media($mobile-screen-up){
-    margin-top: 10px;
     margin-right: 0px;
     float: right;
   }
@@ -102,9 +94,6 @@
   }
   @include media($extra-large-screen-up) {
     margin-top: -190px;
-  }
-  @include media($xxl-screen) {
-    margin-top: -210px;
   }
 }
 
