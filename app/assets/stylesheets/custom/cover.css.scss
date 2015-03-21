@@ -78,6 +78,7 @@
   }
 }
 
+//Rightmost
 #notes, #map, #postcard {
   @include media($mobile-screen-up){
     margin-right: 0px;
@@ -235,4 +236,8 @@
 
 .header {
   padding: 50px 0px;
+}
+
+.body {
+  padding-bottom: 100px;
 }
