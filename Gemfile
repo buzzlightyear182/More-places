@@ -66,4 +66,4 @@ gem 'bourbon'
 gem 'neat'
 gem 'refills'
 gem 'normalize-rails'
-gem "font-awesome-rails"
+gem "font-awesome-sass"

@@ -4,6 +4,18 @@
   padding: 5px 0;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.dark-aqua {
+  color: $dark-aqua;
+}
+
+.light-aqua {
+  color: $light-aqua;
+}
+
 .row {
   width: 100%;
   height: 100%;
@@ -11,11 +23,11 @@
 }
 
 .row:first-child {
-  background-color: rgba(219,239,240,1.0);
+  background-color: $light-aqua;
 }
 
 .row:nth-child(2){
-  background-color: #4C9BA8;
+  background-color: $dark-aqua;
 }
 
 .cover {
@@ -47,8 +59,6 @@
 }
 
 #title h1 {
-  text-align: center;
-  color: #4C9BA8;
   margin: auto;
   vertical-align: middle;
 
@@ -68,8 +78,6 @@
 }
 
 #title .subtitle {
-  text-align: center;
-  color: #4C9BA8;
   margin: auto;
   padding: 0px;
 
@@ -160,18 +168,22 @@
     color: white;
     height: inherit;
     overflow: hidden;
-    padding: $base-spacing;
+    // padding-top: $base-spacing +1.5;
+    @include fill-parent;
   }
 
   .hover-tile-hidden {
-    background: transparentize(#000, 0.5);
+    // background: transparentize(#fff, 0.5);
 
-    p {
-      color: transparentize(#fff, 0.3);
-    }
-
-    h4 {
-      margin-bottom: 0.5em;
+    a {
+      padding: 2.5em;
+      font-size: $h2-font-size;
+      color: $base-accent-color;
+      background-color: transparentize(#fff, 0.1);
+      text-align: center;
+      @include span-columns(12);
+      font-weight: bold;
+      text-transform: uppercase;
     }
   }
 }
@@ -235,7 +247,17 @@
 }
 
 .header {
-  padding: 50px 0px;
+  padding: 40px 20px;
+  text-align: center;
+
+  h1 {
+    color: $light-aqua;
+    text-transform: uppercase;
+  }
+
+  h5 {
+    color: white;
+  }
 }
 
 .body {
