@@ -1,0 +1,320 @@
+.container {
+  @include outer-container;
+  @include clearfix;
+  padding: 5px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.dark-aqua {
+  color: $dark-aqua;
+}
+
+.light-aqua {
+  color: $light-aqua;
+}
+
+.row {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .header {
+    padding: 40px 20px;
+    text-align: center;
+  }
+}
+
+.row:nth-child(2n+1) {
+  background-color: $light-aqua;
+
+  .header {
+
+    h1 {
+      color: $base-accent-color;
+      text-transform: uppercase;
+    }
+
+    h5 {
+      color: white;
+    }
+  }
+}
+
+.row:nth-child(2n){
+  background-color: $dark-aqua;
+
+  .header {
+
+    h1 {
+      color: $light-aqua;
+      text-transform: uppercase;
+    }
+
+    h5 {
+      color: white;
+    }
+  }
+
+  label {
+    color: white;
+  }
+
+  input.light-button {
+    background-color: $light-aqua;
+    color: $dark-gray;
+    text-align: center;
+    margin: auto !important;
+  }
+
+  input.light-button:hover {
+    background-color: $middle-aqua;
+  }
+}
+
+.cover {
+  @include span-columns(4);
+
+  @include media($medium-screen-down) {
+    @include span-columns(2);
+  }
+
+  @include media($mobile) {
+    width: 70%;
+    margin: auto;
+    @include clearfix;
+    float: center;
+    margin-top: 20px !important;
+  }
+}
+
+.cover:last-child {
+  @include media($mobile) {
+    margin: auto !important;
+  }
+}
+
+#title {
+  @include media($medium-screen-down) {
+    @include fill-parent;
+  }
+}
+
+#title h1 {
+  margin: auto;
+  vertical-align: middle;
+
+  @include media($mobile) {
+    padding-top: 0px;
+  }
+  @include media($medium-screen-down) {
+    font-size: 2em;
+    padding-top: 20px;
+  }
+  @include media($medium-screen-up) {
+    font-size: 3em;
+  }
+  @include media($extra-large-screen-up) {
+    font-size: 3.6em;
+  }
+}
+
+#title .subtitle {
+  margin: auto;
+  padding: 0px;
+
+  @include media($medium-screen-down) {
+    font-size: small;
+  }
+}
+
+//Rightmost
+#notes, #map, #postcard {
+  @include media($mobile-screen-up){
+    margin-right: 0px;
+    float: right;
+  }
+}
+
+#notes {
+  @include media($mobile-screen-up){
+    margin-top: -210px;
+  }
+   @include media($medium-screen-up){
+    margin-top: 0px;
+  }
+}
+
+//Second row, bottom
+#postcard, #mail {
+  @include media($medium-screen-up) {
+    margin-top: -230px;
+  }
+  @include media($large-screen-up) {
+    margin-top: -210px;
+  }
+  @include media($extra-large-screen-up) {
+    margin-top: -190px;
+  }
+}
+
+#mail {
+  @include media($mobile-screen-up){
+    float: right;
+    margin-right: 0px;
+  }
+  @include media($medium-screen-up){
+    float: left;
+    margin-right: 2.18%;
+  }
+}
+
+//Second row, last
+#postcard {
+  @include media($mobile) {
+    margin-top: 20px !important;
+  }
+  @include media($mobile-screen-up){
+    float: right;
+  }
+}
+
+.hover-tile-outer {
+  $base-line-height: 1.5em !default;
+  $hover-tile-height: 13em;
+  cursor: pointer;
+
+  h4 {
+    margin: 0;
+  }
+
+  p {
+    line-height: $base-line-height;
+  }
+
+  margin-bottom: $base-line-height;
+
+  .hover-tile-container {
+    width: 100%;
+    height: $hover-tile-height;
+    overflow: hidden;
+  }
+
+  .hover-tile-container:hover > .hover-tile {
+    @include transform(translate(0, -100%));
+  }
+
+  .hover-tile {
+    @include transition(all, 0.2s ease-in-out);
+    background: inherit;
+    color: white;
+    height: inherit;
+    overflow: hidden;
+    // padding-top: $base-spacing +1.5;
+    @include fill-parent;
+  }
+
+  .hover-tile-hidden {
+    // background: transparentize(#fff, 0.5);
+
+    a {
+      padding-top: 3.5em;
+      padding-bottom: 3.5em;
+      font-size: $h4-font-size;
+      color: $base-accent-color;
+      background-color: transparentize(#fff, 0.1);
+      text-align: center;
+      @include span-columns(12);
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 0.25em;
+    }
+  }
+}
+
+#backpack{
+  background: url("/assets/backpack.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+
+  .double-hover-tile-container {
+    width: 100%;
+    height: 26em;
+    overflow: hidden;
+  }
+
+  .double-hover-tile-container:hover > .hover-tile {
+    @include transform(translate(0, -100%));
+  }
+
+  a {
+    padding-top: 3.2em;
+    padding-bottom: 3.2em;
+  }
+}
+
+#info {
+  background: url("/assets/information.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+}
+
+#map {
+  background: url("/assets/map.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+}
+
+#activities {
+  background: url("/assets/activities.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+}
+
+#notes {
+  background: url("/assets/notes.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+}
+
+#mail {
+  background: url("/assets/mail.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+}
+
+#postcard {
+  background: url("/assets/postcard.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+}
+
+.body {
+  padding-bottom: 100px;
+}
+
+form.new_contact_form {
+  @include span-columns(10);
+  @include shift(1);
+  padding-bottom: 100px;
+}
+
+footer.cover {
+  @include span-columns(12);
+  background-color: $dark-gray;
+  color: $light-aqua;
+  padding: 20px;
+  text-align: center;
+
+  .fa {
+    display: inline;
+  }
+}

@@ -17,5 +17,6 @@
 //= require jquery-ui/position
 //= require jquery-ui/menu
 //= require jquery-ui/autocomplete
+//= require cover
 //= require trips
 //= require dashboard

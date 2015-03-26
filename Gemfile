@@ -52,6 +52,7 @@ gem 'letter_opener', group: [:test, :development]
 gem 'database_cleaner', group: [:test, :development]
 
 gem 'simple_form'
+gem 'mail_form'
 
 #User authentication
 gem 'devise'
@@ -66,4 +67,4 @@ gem 'bourbon'
 gem 'neat'
 gem 'refills'
 gem 'normalize-rails'
-gem "font-awesome-rails"
+gem "font-awesome-sass"

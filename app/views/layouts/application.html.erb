@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link href='http://fonts.googleapis.com/css?family=Sanchez:400italic,400' rel='stylesheet' type='text/css'> -->
-
+    <link href='//fonts.googleapis.com/css?family=Nunito:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
     <title><%= content_for?(:title) ? yield(:title) : "Places Together v2" %></title>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -13,13 +13,13 @@
   </head>
 
   <body>
-    <%= render '/refills/navigation' %>
+    <!-- <%= render '/refills/navigation' %> -->
 
     <%= flash_message %>
-    <div class='container'>
-      <h1><%= yield(:title) %></h1>
+    <!-- <div class='container'> -->
+      <!-- <h1><%= yield(:title) %></h1> -->
       <%= yield %>
-    </div>
+    <!-- </div> -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </body>
 </html>

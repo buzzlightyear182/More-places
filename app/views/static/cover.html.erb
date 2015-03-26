@@ -1,0 +1,127 @@
+<div class="row">
+  <div class="container">
+    <div id="title" class="cover dark-aqua text-center hover-tile-outer">
+      <h1>Places Together</h1>
+      <h6 class="subtitle">Hover over the items to see what's inside!</h6>
+    </div>
+
+    <div id="info" class="cover hover-tile-outer">
+      <div class="hover-tile-container">
+        <div class="hover-tile hover-tile-visible">
+          <!-- <object data="assets/information.svg" type="image/svg+xml"></object> -->
+        </div>
+        <div class="hover-tile hover-tile-hidden">
+          <%= link_to "About", "#about" %>
+        </div>
+      </div>
+    </div>
+
+    <div id="map" class="cover hover-tile-outer">
+      <div class="hover-tile-container">
+        <div class="hover-tile hover-tile-visible">
+      <!-- <object data="assets/map.svg" type="image/svg+xml"></object> -->
+        </div>
+        <div class="hover-tile hover-tile-hidden">
+          <a href="#">Destinations</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="activities" class="cover hover-tile-outer">
+      <div class="hover-tile-container">
+        <div class="hover-tile hover-tile-visible">
+          <!-- <object data="assets/activities.svg" type="image/svg+xml"></object> -->
+        </div>
+        <div class="hover-tile hover-tile-hidden">
+          <a href="#">Activities</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="backpack" class="cover hover-tile-outer">
+      <div class="double-hover-tile-container">
+        <div class="hover-tile hover-tile-visible">
+          <!-- <object data="assets/backpack.svg" type="image/svg+xml"></object> -->
+        </div>
+        <div class="hover-tile hover-tile-hidden">
+          <a href="">Login</a>
+          <a href="#">Enter your Dashboardnow</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="notes" class="cover hover-tile-outer">
+      <div class="hover-tile-container">
+        <div class="hover-tile hover-tile-visible">
+          <!-- <object data="assets/notes.svg" type="image/svg+xml"></object> -->
+        </div>
+        <div class="hover-tile hover-tile-hidden">
+          <a href="#process">Learn how this works</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="mail" class="cover hover-tile-outer">
+      <div class="hover-tile-container">
+        <div class="hover-tile hover-tile-visible">
+          <!-- <object data="assets/mail.svg" type="image/svg+xml"></object> -->
+        </div>
+        <div class="hover-tile hover-tile-hidden">
+         <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="postcard" class="cover hover-tile-outer">
+      <div class="hover-tile-container">
+        <div class="hover-tile hover-tile-visible">
+          <!-- <object data="assets/postcard.svg" type="image/svg+xml"></object> -->
+        </div>
+        <div class="hover-tile hover-tile-hidden">
+          <a href="#">Postcard project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="container">
+    <div class="header" id="about">
+      <h1>About</h1>
+      <h5>Travel is a fun experience that could be shared with anyone,<br/>regardless of race, age or gender.</h5>
+    </div>
+    <div class="body">
+      <%= render 'refills/icon_bullet_points'%>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="container">
+    <div class="header" id="process">
+      <h1>Learn how it works</h1>
+    </div>
+    <div class="body">
+      <%= render 'static/process'%>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="container">
+    <div class="header" id="contact">
+      <h1>Contact Us</h1>
+    </div>
+    <div class="body">
+      <%= render 'static/contact' %>
+    </div>
+  </div>
+</div>
+
+<a href="#title">
+  <footer class="cover">
+    <i class="fa fa-arrow-circle-up fa-2x"></i>
+    <h5>Back to top</h5>
+  </footer>
+</a>
