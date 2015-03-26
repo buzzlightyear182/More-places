@@ -94,6 +94,9 @@ GEM
       launchy (~> 2.2)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mail_form (1.5.0)
+      actionmailer (>= 3.2, < 5)
+      activemodel (>= 3.2, < 5)
     method_source (0.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.2)
@@ -214,6 +217,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   letter_opener
+  mail_form
   neat
   normalize-rails
   pg

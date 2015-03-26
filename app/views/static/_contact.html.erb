@@ -1,0 +1,15 @@
+<%= form_for @contact do |c| %>
+  <div>
+    <%= c.label :name %>
+    <%= c.text_field :name %>
+  </div>
+  <div>
+    <%= c.label :email %>
+    <%= c.text_field :email %>
+  </div>
+  <div>
+    <%= c.label :message %>
+    <%= c.text_area :message %>
+  </div>
+  <%= c.submit "Send message", :class => 'light-button' %>
+<% end %>
