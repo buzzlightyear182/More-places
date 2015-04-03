@@ -1,3 +1,26 @@
-// Place all the styles related to the Reviews controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.trip_sidebar {
+  @include span-columns(4);
+  margin-top: 10px;
+  @include media($mobile) {
+    @include span-columns(12);
+    @include clearfix;
+    margin: auto !important;
+  }
+}
+
+.review_row {
+  background-color: $light-aqua;
+}
+
+.review_form {
+  @include span-columns(8);
+  margin-top: 10px;
+}
+
+.new_review {
+  @include span-columns(12);
+}
+
+p.score, input#review_score {
+  display: inline !important;
+}

@@ -1,7 +1,7 @@
 @mixin flash($color) {
   display: block;
   font-weight: bold;
-  margin-bottom: $base-spacing / 2;
+  // margin-bottom: $base-spacing / 2;
   padding: $base-spacing / 2;
   background: $color;
   color: darken($color, 60);

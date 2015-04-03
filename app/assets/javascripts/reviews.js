@@ -1,2 +1,4 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+$('#review_score').change(function(){
+  var new_score = $('#review_score').val();
+  $(".score").html(new_score);
+})

@@ -1,18 +1,35 @@
-<div class="row">
-  <%= render 'refills/navigation' %>
-  <div class="container">
+<%= render 'refills/navigation' %>
+
+<div class="review_row">
+  <div class="cards trip_sidebar">
+    <div class="card">
+      <div class="card-header">
+        Details of: Trip #<%= @participation.trip.id %>
+      </div>
+      <div class="card-copy">
+        <h6>Dates:</h6><p><%= @participation.trip.from_date %> to <%= @participation.trip.to_date %></p>
+        <h6>Destination:</h6><p><%= @participation.trip.destination.city %>, <%= @participation.trip.destination.country %></p>
+        <h6>Activity:</h6><p><%= @participation.trip.activity.activity_with_category %></p>
+        <h6>Organized by:</h6><p><%= @participation.trip.organizer.username %></p>
+        <h6>Description:</h6><p><%= @participation.trip.description %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="review_form">
     <h4>You are reviewing:
-      <%= @participation.user.username %> for <%= @participation.trip.name %>
+      <span class="orange"><%= @participation.user.username %></span> for<br/><span class="orange"><%= @participation.trip.name %></span>
     </h4>
     <%= form_for [@participation, @review] do |f| %>
       <%= f.hidden_field :author_id, value: current_user.id %>
-      <div>
+      <div class="trip_form_field">
       <%= f.label :content %>
-      <%= f.text_area :content %>
+      <%= f.text_area :content, placeholder: "Please give a short and honest review of your experience with this person" %>
       </div>
-      <div>
+      <div class="trip_form_field">
       <%= f.label :score %>
-      <p>1<%= f.range_field :score, min: 1, max: 10, step: 1 %>10</p>
+      <p>Please move the slider to adjust the rating score: <strong><span class="score orange">5</span></strong>
+      <p><span class="badge-error">1</span><%= f.range_field :score, min: 1, max: 10, step: 1 %><span class="badge-success">10</span></p>
       </div>
       <%= f.submit "Save" %>
     <% end %>

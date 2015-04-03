@@ -51,7 +51,7 @@ class Trip < ActiveRecord::Base
   end
 
   def name
-    "Trip ID #{id}: #{activity.name} going to #{destination.name}"
+    "Trip ID #{id}: #{activity.name} trip in #{destination.name}"
   end
 
   def destination_name

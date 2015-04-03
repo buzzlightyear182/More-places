@@ -1,7 +1,7 @@
 <%= form_for @trip do |f| %>
   <%= f.hidden_field :user_id, :value => current_user.id %></%>
   <div class="trip_form_field">
-    <h4><%= icon "plane" %> Where do you want to go?</h4>
+    <h4><%= icon "plane"%> Where do you want to go?</h4>
     <%= f.label :destination_name %>
     <%= f.text_field :destination_name, placeholder: "City, Country" %>
     <%= f.hidden_field :google_places_id, :value => nil %></%>

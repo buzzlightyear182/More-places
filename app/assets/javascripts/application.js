@@ -20,4 +20,5 @@
 //= require refills/vertical_tabs
 //= require cover
 //= require trips
+//= require reviews
 //= require dashboard
