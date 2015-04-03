@@ -1,10 +1,22 @@
+body {
+  background-color: $light-aqua;
+}
+
 .form {
   margin: auto;
   padding: 80px 20px;
   @include media ($medium-screen) {
     padding-top: 20px;
-    @include shift(4);
-    @include span-columns(4);
+    @include shift(2);
+    @include span-columns(8);
+    h1 {
+      font-size: 2.5em;
+    }
+  }
+
+  @include media ($large-screen){
+    @include shift(3);
+    @include span-columns(6);
   }
 }
 

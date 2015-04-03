@@ -1,6 +1,6 @@
 header.navigation {
   $navigation-padding: 1em;
-  $navigation-background: $red;
+  $navigation-background: $dark-gray;
   $navigation-color: transparentize(white, 0.3);
   $navigation-color-hover: white;
   $navigation-height: 60px;
@@ -22,8 +22,9 @@ header.navigation {
 
   .navigation-wrapper {
     @include clearfix;
-    @include outer-container;
+    // @include outer-container;
     position: relative;
+    // padding: $navigation-padding;
     z-index: 9999;
     font-family: $sans-serif;
   }
@@ -33,10 +34,12 @@ header.navigation {
     max-height: $navigation-height;
     padding-left: $navigation-padding;
     padding-right: 2em;
+    vertical-align: middle;
+    padding-top: 0.25em;
 
     img {
       max-height: $navigation-height;
-      padding: .8em 0;
+      padding: 0.25em 0;
     }
   }
 
