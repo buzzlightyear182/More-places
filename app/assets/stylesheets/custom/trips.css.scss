@@ -42,11 +42,44 @@
 }
 
 .change {
-  @include span-columns(3);
+  margin: 10px;
+}
+
+.create {
+  @include shift(3);
+  @include span-columns(6);
   margin: 10px;
 }
 
 .submit {
   @include fill-parent();
   display: block;
+}
+
+.trip_header {
+  border-bottom: 2px solid $light-gray;
+  color: $orange;
+  padding: 10px 0;
+}
+
+.details {
+  @include span-columns(6);
+  padding: 10px 0;
+
+  h4 {
+    color: $dark-aqua;
+    @include span-columns(5);
+  }
+  p {
+    @include span-columns(7);
+  }
+
+  .bigger {
+    font-weight: bold;
+    font-size: $base-font-size * 1.1;
+  }
+}
+
+.details:last-child {
+  margin-right: 0.1em;
 }

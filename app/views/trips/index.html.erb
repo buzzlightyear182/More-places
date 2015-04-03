@@ -1,5 +1,16 @@
-<% content_for :title, "Browse other trips happening!" %>
-<% @trips.each do |trip| %>
-  <%= link_to trip.name, trip_path(:id => trip.id) %></br>
-<% end %>
-
+<%= render 'refills/navigation' %>
+<div class="header">
+<h1 class="text-center orange">Browse other trips</h1>
+</div>
+<div class="grid cards">
+  <% @trips.each do |trip| %>
+  <div class="card">
+    <div class="card-header">
+      <h6><%= link_to trip.name, trip %></h6>
+    </div>
+    <div class="card-copy">
+      <p>From <%= trip.from_date %> to <%= trip.to_date %></p>
+    </div>
+  </div>
+  <% end %>
+</div>

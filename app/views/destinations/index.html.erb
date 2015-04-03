@@ -1,14 +1,19 @@
 <%= render 'refills/navigation' %>
 <div class="container">
-<% @destinations.each do |d| %>
-  <ul><h4><%= d.city %>, <%= d.country %> (<%= d.trips.count %>)</h4>
-    <% d.trips.each do |trip| %>
-    <li><%= link_to trip.name, trip_path(:id => trip.id) %>
-    <p>Confirmed: <%= trip.participations.is_confirmed.count %></p>
-    <p>Pending: <%= trip.participations.is_pending.count %></p>
-    <p>From Date: <%= trip.from_date %>, To Date: <%= trip.to_date %></p>
+  <div class="header">
+    <h1 class="text-center orange">Browse trips by destination</h1>
+  </div>
+  <ul class="accordion">
+  <% @destinations.each do |d| %>
+    <li>
+      <a href="javascript:void(0)" class="js-accordion-trigger"><%= d.city %>, <%= d.country %> (<%= d.trips.count %>)</a>
+      <ul class="submenu">
+        <% d.trips.each do |trip| %>
+        <li><%= link_to trip.name, trip_path(:id => trip.id) %>
+        </li>
+        <% end %>
+      </ul>
     </li>
-    <% end %>
+  <% end %>
   </ul>
-<% end %>
 </div>

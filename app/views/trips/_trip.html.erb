@@ -1,24 +1,42 @@
 <div class="container">
 <%= div_for trip do %>
-  <h2 class="dark-aqua text-center">Going to <%= trip.destination.city %>, <%= trip.destination.country %></h2><br/>
-  From: <%= trip.from_date %><br/>
-  To: <%= trip.to_date %><br/>
-  Activity: <%= trip.activity.name %><br/>
-  Description: <%= trip.description %><br/>
+  <div class="trip_header">
+    <h3>Trip ID <%= trip.id %></h3>
+  </div>
+  <div class="details">
+    <h4>Destination</h4>
+    <p class="dark-aqua bigger"><%= trip.destination.city %>, <%= trip.destination.country %></p>
+  </div>
+  <div class="details">
+    <h4>Dates</h4>
+    <p>From <strong><%= trip.from_date %></strong> to <strong><%= trip.to_date %></strong></p>
+  </div>
+  <div class="details">
+    <h4>Activity</h4>
+    <p><%= trip.activity.name %></p>
+  </div>
+  <div class="details">
+    <h4>Description</h4>
+    <p><%= trip.description %></p>
+  </div>
+
   <% unless trip.capacity.nil? %>
-    Capacity: <%= trip.capacity %><br/>
+    <div class="details">
+      <h4>Capacity</h4>
+      <p><%= trip.capacity %></p>
+    </div>
   <% end %>
 
-<div>
-  <%= content_tag(:h4, "Participants") %>
-  <%= display_participants_of trip.confirmed_participations %>
-</div>
+  <div class="details">
+    <%= content_tag(:h4, "Participants") %>
+    <%= display_participants_of trip.confirmed_participations %>
+  </div>
 
-<div>
-  <%= count_pending_participants_of trip %>
-</div>
-
-<%= show_controls_for trip %>
-
+  <div class="details">
+    <%= count_pending_participants_of trip %>
+  </div>
+  <div class="details">
+    <%= show_controls_for trip %>
+  </div>
 <% end %>
 </div>

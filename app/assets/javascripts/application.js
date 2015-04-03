@@ -22,3 +22,4 @@
 //= require trips
 //= require reviews
 //= require dashboard
+//= require destinations

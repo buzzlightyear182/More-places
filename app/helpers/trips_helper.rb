@@ -17,11 +17,11 @@ module TripsHelper
   end
 
   def allow_update trip
-    button_to "Update this trip", edit_trip_path(:id => trip.id), method: :get, :class => 'change'
+    button_to "Update", edit_trip_path(:id => trip.id), method: :get, :class => 'change'
   end
 
   def allow_destroy trip
-    button_to "Cancel this", trip_path(:id => trip.id), method: :delete, data: { confirm: "Are you sure?" }, :class => 'change'
+    button_to "Cancel", trip_path(:id => trip.id), method: :delete, data: { confirm: "Are you sure?" }, :class => 'change'
   end
 
   def allow_join trip
