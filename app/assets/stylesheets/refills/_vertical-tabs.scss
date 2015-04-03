@@ -10,13 +10,13 @@
   $dark-gray: #333 !default;
   $medium-screen: em(640) !default;
   $base-font-color: $dark-gray !default;
-  
+
   li {
     list-style: none;
   }
 
   p {
-    color: $base-font-color;
+    // color: $base-font-color;
     line-height: $base-line-height;
   }
 
@@ -39,7 +39,7 @@
   border-radius: $tab-border-radius;
   border: $tab-border;
   margin-bottom: $base-spacing;
-  overflow: hidden;
+  // overflow: hidden;
 
   .vertical-tabs {
     display: none;
@@ -74,15 +74,15 @@
   }
 
   .vertical-tab:focus {
-    outline: none; 
+    outline: none;
   }
 
   .vertical-tab-content-container {
     display: block;
     margin: 0 auto;
 
-    & a:focus { 
-      outline: none; 
+    & a:focus {
+      outline: none;
     }
 
     @include media($vertical-tab-mode) {

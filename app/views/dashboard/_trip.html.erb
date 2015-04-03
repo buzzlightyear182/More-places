@@ -1,9 +1,14 @@
-<%= link_to trip.name, trip_path(:id => trip.id) %>
-<p class="placeId"><%= trip.destination.google_places_id %></p>
-<p class="placeId"><%= trip.from_date %> to <%= trip.to_date %></p>
-<% if (trip.has_finished?) || (trip.is_ongoing?) %>
-  <%= display_participants_of trip.confirmed_participations %>
-<% elsif (trip.user_id == current_user.id) %>
-  <%= display_participants_of trip.pending_participations %>
-<% end %>
-<hr>
+<div class="card">
+  <div class="card-header">
+    <%= link_to trip.name, trip_path(:id => trip.id) %>
+  </div>
+  <div class="card-copy">
+    <!-- <p class="placeId"><%= trip.destination.google_places_id %></p> -->
+    <p class="placeId">Dates: <%= trip.from_date %> to <%= trip.to_date %></p>
+    <% if (trip.has_finished?) || (trip.is_ongoing?) %>
+      <%= display_participants_of trip.confirmed_participations %>
+    <% elsif (trip.user_id == current_user.id) %>
+      <%= display_participants_of trip.pending_participations %>
+    <% end %>
+  </div>
+</div>
