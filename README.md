@@ -8,6 +8,8 @@ I wanted to start on a new clean slate instead of branching out from previous re
 
 The concept is pretty much the same as the old one ([here](https://github.com/buzzlightyear182/Places-Together)). Since I already know what I want to achieve in this application, then I could have more time to think about improvements. Looking back at my previous code, it was rushed and very dirty. Now I have more free time to work/play on this mini-project.
 
+![cover_page_flatlay.jpg](https://github.com/buzzlightyear182/More-places/blob/master/cover_page_flatlay.jpg)
+
 -----------------
 
 PLANNED CHANGES:
