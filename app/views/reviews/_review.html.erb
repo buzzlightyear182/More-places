@@ -1,4 +1,9 @@
-<div>
-  <%= content_tag(:p, review.content) %>
+<% if review.score >= 8.0 %>
+  <div class="badge-success">
+<% elsif review.score <= 5.0 %>
+  <div class="badge-error">
+<% else %>
+  <div class="badge-alert">
+<% end %>
   <%= review.score %> by: <%= review.author.username %>
 </div>

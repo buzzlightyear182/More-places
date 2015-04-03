@@ -4,7 +4,8 @@
   </div>
   <div class="card-copy">
     <!-- <p class="placeId"><%= trip.destination.google_places_id %></p> -->
-    <p class="placeId">Dates: <%= trip.from_date %> to <%= trip.to_date %></p>
+    <h6>Dates:</h6><p><%= trip.from_date %> to <%= trip.to_date %></p>
+    <h6>Members:</h6>
     <% if (trip.has_finished?) || (trip.is_ongoing?) %>
       <%= display_participants_of trip.confirmed_participations %>
     <% elsif (trip.user_id == current_user.id) %>

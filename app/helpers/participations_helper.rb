@@ -15,7 +15,7 @@ module ParticipationsHelper
     if (reviews.count != 0) || (participation.user == current_user)
       display_reviews_for participation
     else
-      button_to "Review", new_participation_review_path(:participation_id => participation.id), method: :get
+      link_to "Review", new_participation_review_path(:participation_id => participation.id), method: :get, :class => "badge"
     end
   end
 
