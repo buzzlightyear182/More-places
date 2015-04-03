@@ -1,5 +1,6 @@
+<div class="container">
 <%= div_for trip do %>
-  <h2>Going to <%= trip.destination.city %>, <%= trip.destination.country %></h2><br/>
+  <h2 class="dark-aqua text-center">Going to <%= trip.destination.city %>, <%= trip.destination.country %></h2><br/>
   From: <%= trip.from_date %><br/>
   To: <%= trip.to_date %><br/>
   Activity: <%= trip.activity.name %><br/>
@@ -20,3 +21,4 @@
 <%= show_controls_for trip %>
 
 <% end %>
+</div>

@@ -69,7 +69,9 @@ class Trip < ActiveRecord::Base
 
 
   def google_places_id=(google_places_id)
-    self.destination.update_attributes(google_places_id: google_places_id)
+    unless self.destination.nil?
+      self.destination.update_attributes!(google_places_id: google_places_id)
+    end
   end
 
   def activity_name
