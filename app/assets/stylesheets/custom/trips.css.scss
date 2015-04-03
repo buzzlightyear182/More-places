@@ -1,29 +1,27 @@
 #new_trip, .edit_trip {
-  @include span-columns(12);
-  @include outer-container;
-  margin: auto;
+    @include span-columns(12);
+    @include outer-container;
+    margin: auto;
+
+  @include media($medium-screen) {
+    @include shift(3);
+    @include span-columns(6);
+  }
 }
 
 // #new_trip div, .edit_trip div {
 .trip_form_field {
-
   h4 {
-    color: $turquoise;
+    color: $dark-aqua;
   }
 
-  @include span-columns(6 of 12);
   margin: 5px 1px;
-  display: block;
   padding: 5px;
   border-radius: $base-border-radius;
-
-  @include media($large-screen-down) {
-    @include span-columns(8);
-  }
 }
 
 .centered {
-  padding: 0 10px;
+  padding: 120px 10px;
   vertical-align: middle;
   margin: auto;
   text-align: center;
@@ -36,7 +34,10 @@
   text-transform: uppercase;
   padding: 1em;
   text-align: right;
-  @include span-columns(6);
+  @include media($medium-screen) {
+    @include shift(3);
+    @include span-columns(6);
+  }
 }
 
 .change {
@@ -47,7 +48,4 @@
 .submit {
   @include fill-parent();
   display: block;
-  @include media ($large-screen-up) {
-    @include shift(12);
-  }
 }

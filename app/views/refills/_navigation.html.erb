@@ -1,6 +1,12 @@
 <header class="navigation">
   <div class="navigation-wrapper">
-    <h2><%= link_to "Places Together", root_path, :class => "logo" %></h2>
+    <h2>
+    <% if user_signed_in? %>
+      <%= link_to "Places Together", dashboard_path(current_user), :class => "logo" %>
+    <% else %>
+      <%= link_to "Places Together", root_path, :class => "logo" %>
+    <% end %>
+    </h2>
     <% if user_signed_in? %>
     <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
     <div class="nav">
@@ -11,11 +17,9 @@
             <li class="nav-link"><%= link_to "By Activities", activities_path %></li>
           </ul>
         </li>
-        <li class="nav-link more"><a href="javascript:void(0)">About Us</a>
-          <ul class="submenu">
-            <li class="nav-link"><a href="javascript:void(0)">FAQ</a></li>
-          </ul>
-        <li class="nav-link"><a href="javascript:void(0)">Contact</a></li>
+        <li class="nav-link"><%= link_to "About", about_path %></li>
+        <li class="nav-link"><%= link_to "How It Works",how_it_works_path %></li>
+        <li class="nav-link"><%= link_to "Contact Us",contact_path %></li>
       </ul>
     </div>
 

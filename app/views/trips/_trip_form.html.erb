@@ -1,20 +1,20 @@
 <%= form_for @trip do |f| %>
   <%= f.hidden_field :user_id, :value => current_user.id %></%>
   <div class="trip_form_field">
-    <h4><%= fa_icon "plane", text: "Where do you want to go?", right: true %></h4>
+    <h4><%= icon "plane" %> Where do you want to go?</h4>
     <%= f.label :destination_name %>
     <%= f.text_field :destination_name, placeholder: "City, Country" %>
     <%= f.hidden_field :google_places_id, :value => nil %></%>
   </div>
 
   <div class="trip_form_field">
-  <h4><%= fa_icon "heart", text: "What do you want to do?", right: true %></h4>
+  <h4><%= icon "heart" %> What do you want to do?</h4>
     <%= f.label :activity_name %>
     <%= f.text_field :activity_name, placeholder: "Ex. Dive, Trek, Museum Visit" %>
   </div>
 
   <div class="trip_form_field">
-    <h4><%= fa_icon "calendar", text: "What's your schedule?", right: true %></h4>
+    <h4><%= icon "calendar"%> What's your schedule?</h4>
     <%= f.label :from_date %>
     <%= f.date_field :from_date %>
     <%= f.label :to_date %>
@@ -22,13 +22,13 @@
   </div>
 
   <div class="trip_form_field">
-  <h4><%= fa_icon "pencil", text: "Say something about your trip", right: true %></h4>
+  <h4><%= icon "pencil" %> Write a short description about your trip</h4>
     <%= f.label :description %>
     <%= f.text_area :description, placeholder: "Plans, Itinerary, Meeting Place, Time, etc" %>
   </div>
 
   <div class="trip_form_field">
-    <h4><%= fa_icon "group", text: "Is there a capacity for your trip?", right: true %></h4>
+    <h4><%= icon "group" %> Is there a capacity for your trip?</h4>
     <em>Optional <%= f.label :capacity %></em>
     <%= f.text_area :capacity, placeholder: 'Leave blank if no maximum capacity', value: @trip.capacity || nil %>
   </div>

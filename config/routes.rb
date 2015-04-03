@@ -26,6 +26,11 @@ Rails.application.routes.draw do
 
   resources :contact_forms, only: [:new, :create]
 
+  get '/about' => 'static#about', as: 'about'
+  get '/how_it_works' => 'static#how_it_works', as: 'how_it_works'
+  get '/contact' => 'static#contact', as: 'contact'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

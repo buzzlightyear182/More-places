@@ -305,6 +305,10 @@
   padding-bottom: 100px;
 }
 
+#contact {
+  padding: 80px;
+}
+
 form.new_contact_form {
   @include span-columns(10);
   @include shift(1);

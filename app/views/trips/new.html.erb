@@ -1,5 +1,6 @@
-<% content_for :title, "Create a new trip!" %>
+<%= render 'refills/navigation' %>
+<h1 class="dark-aqua text-center">Create a New Trip!</h1>
 <button id="next_button", class="button">
-  <%= fa_icon "chevron-circle-right", text: "NEXT", right: true %>
+  <%= icon "chevron-circle-right" %> NEXT
 </button>
 <%= render 'trip_form' %>

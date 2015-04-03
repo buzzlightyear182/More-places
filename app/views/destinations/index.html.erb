@@ -1,3 +1,5 @@
+<%= render 'refills/navigation' %>
+<div class="container">
 <% @destinations.each do |d| %>
   <ul><h4><%= d.city %>, <%= d.country %> (<%= d.trips.count %>)</h4>
     <% d.trips.each do |trip| %>
@@ -9,3 +11,4 @@
     <% end %>
   </ul>
 <% end %>
+</div>

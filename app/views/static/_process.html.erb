@@ -1,85 +1,95 @@
-<div class="col-lg-12">
-  <ul class="timeline">
-    <li>
-      <div class="timeline-image">
-        <i class="fa fa-5x fa-search"></i>
-        <h4>Find</h4>
-      </div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-            <h4>Find a trip</h4>
-        </div>
-        <div class="timeline-body">
-          <p class="text-muted">Search or browse through our platform for existing trips. You can select by destination or activity or simply type in your search.</p>
-        </div>
-      </div>
-    </li>
-    <li class="timeline-inverted">
-      <div class="timeline-image">
-         <i class="fa fa-5x fa-plus"></i>
-          <h4>Create</h4>
-      </div>
-      <div class="timeline-panel">
-        <div class="timeline-heading">
-          <h4>Create a new trip</h4>
-          <h4 class="subheading">if you didn't find a match</h4>
-        </div>
-        <div class="timeline-body">
-          <p class="text-muted">Just enter your trip details such as destination, scheduled dates, planned activity and how many people are you looking for</p>
-        </div>
-      </div>
-    </li>
-        <li>
+<div class="row">
+  <div class="container">
+    <div class="header" id="process">
+      <h1>Learn how it works</h1>
+    </div>
+    <div class="body">
+      <div class="col-lg-12">
+        <ul class="timeline">
+          <li>
             <div class="timeline-image">
-                <i class="fa fa-user-plus fa-5x"></i>
-                <h4>Join</h4>
+              <i class="fa fa-5x fa-search"></i>
+              <h4>Find</h4>
             </div>
             <div class="timeline-panel">
-                <div class="timeline-heading">
+              <div class="timeline-heading">
+                  <h4>Find a trip</h4>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted">Search or browse through our platform for existing trips. You can select by destination or activity or simply type in your search.</p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-image">
+               <i class="fa fa-5x fa-plus"></i>
+                <h4>Create</h4>
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4>Create a new trip</h4>
+                <h4 class="subheading">if you didn't find a match</h4>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted">Just enter your trip details such as destination, scheduled dates, planned activity and how many people are you looking for</p>
+              </div>
+            </div>
+          </li>
+              <li>
+                <div class="timeline-image">
+                  <i class="fa fa-user-plus fa-5x"></i>
+                  <h4>Join</h4>
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
                     <h4>Join an exisitng trip</h4>
                     <h4 class="subheading">if you found a match</h4>
-                </div>
-                <div class="timeline-body">
+                  </div>
+                  <div class="timeline-body">
                     <p class="text-muted">Just click on 'JOIN' in the trip details, and wait for trip organizer's approval as well as further instructions</p>
+                  </div>
                 </div>
-            </div>
-        </li>
-        <li class="timeline-inverted">
-            <div class="timeline-image">
-                <i class="fa fa-5x fa-smile-o"></i>
-                <h4>Enjoy</h4>
-            </div>
-            <div class="timeline-panel">
-                <div class="timeline-heading">
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image">
+                  <i class="fa fa-5x fa-smile-o"></i>
+                  <h4>Enjoy</h4>
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
                     <h4>Enjoy your trip!</h4>
                     <h4 class="subheading"></h4>
-                </div>
-                <div class="timeline-body">
+                  </div>
+                  <div class="timeline-body">
                     <p class="text-muted">Have fun on your trip with the rest of the gang! Make new friends and create meaningful experiences together!</p>
+                  </div>
                 </div>
-            </div>
-        </li>
-        <li>
-            <div class="timeline-image">
-                <i class="fa fa-5x fa-thumbs-o-up"></i>
-                <h4>Review</h4>
-            </div>
-            <div class="timeline-panel">
-                <div class="timeline-heading">
-                    <h4>Rate and Review</h4>
-                    <h4 class="subheading">your fellow trip members</h4>
+              </li>
+              <li>
+                <div class="timeline-image">
+                  <i class="fa fa-5x fa-thumbs-o-up"></i>
+                  <h4>Review</h4>
                 </div>
-                <div class="timeline-body">
-                    <p class="text-muted">When a trip is completed, you can create reviews and ratings for your new friends, and this will be reflected on their profiles</p>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                      <h4>Rate and Review</h4>
+                      <h4 class="subheading">your fellow trip members</h4>
+                  </div>
+                  <div class="timeline-body">
+                      <p class="text-muted">When a trip is completed, you can create reviews and ratings for your new friends, and this will be reflected on their profiles</p>
+                  </div>
                 </div>
-            </div>
-        </li>
-        <li class="timeline-inverted">
-            <a href='http://eepurl.com/bgmHN5'>
-            <div class="timeline-image">
-                <h4>Sign<br/>me<br/>up!</h4>
-            </div>
-            </a>
-        </li>
-    </ul>
+              </li>
+              <li class="timeline-inverted">
+                  <% if user_signed_in? %>
+                    <%= link_to "Go to Dashboard", dashboard_path(current_user), :class => "timeline-image timeline-link" %>
+                  <% else %>
+                      <%= link_to "Let's Start", new_user_registration_path, :class => "timeline-image timeline-link" %>
+                  <% end %>
+                  </div>
+              </li>
+          </ul>
+          </div>
+    </div>
+  </div>
 </div>
