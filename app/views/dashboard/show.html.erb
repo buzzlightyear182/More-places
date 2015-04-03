@@ -1,18 +1,7 @@
 <%= render 'refills/navigation' %>
-
-<div>
-  <%= content_tag(:h2, "Your Upcoming Trips") %>
-  <%= display_trips @dashboard.confirmed_trips.upcoming %>
+<div class="row"></div>
+<div class="row">
+  <%= button_to "Start your own trip", new_trip_path, method: :get, :class => 'change' %>
 </div>
 
-<div>
-  <%= content_tag(:h2, "Your Ongoing Trips") %>
-  <%= display_trips @dashboard.confirmed_trips.ongoing %>
-</div>
-
-<div>
-  <%= content_tag(:h2, "Your Finished Trips") %>
-  <%= display_trips @dashboard.confirmed_trips.finished %>
-</div>
-
-<%= button_to "Start your own trip", new_trip_path, method: :get, :class => 'change' %>
+<%= render 'refills/vertical_tabs' %>

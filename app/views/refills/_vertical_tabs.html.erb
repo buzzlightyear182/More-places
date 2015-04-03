@@ -1,0 +1,24 @@
+<div class="vertical-tabs-container">
+  <div class="vertical-tabs">
+    <a href="javascript:void(0)" class="js-vertical-tab vertical-tab is-active" rel="tab1"><%= content_tag(:h4, "Your Upcoming Trips") %></a>
+    <a href="javascript:void(0)" class="js-vertical-tab vertical-tab" rel="tab2"><%= content_tag(:h4, "Your Ongoing Trips") %></a>
+    <a href="javascript:void(0)" class="js-vertical-tab vertical-tab" rel="tab3"><%= content_tag(:h4, "Your Finished Trips") %></a>
+  </div>
+
+  <div class="vertical-tab-content-container">
+    <a href="" class="js-vertical-tab-accordion-heading vertical-tab-accordion-heading is-active" rel="tab1"><%= content_tag(:h4, "Your Upcoming Trips") %></a>
+    <div id="tab1" class="js-vertical-tab-content vertical-tab-content">
+      <%= display_trips @dashboard.confirmed_trips.upcoming %>
+    </div>
+
+    <a href="" class="js-vertical-tab-accordion-heading vertical-tab-accordion-heading" rel="tab2"><%= content_tag(:h4, "Your Ongoing Trips") %></a>
+    <div id="tab2" class="js-vertical-tab-content vertical-tab-content">
+      <%= display_trips @dashboard.confirmed_trips.ongoing %>
+    </div>
+
+    <a href="" class="js-vertical-tab-accordion-heading vertical-tab-accordion-heading" rel="tab3"><%= content_tag(:h4, "Your Finished Trips") %></a>
+    <div id="tab3" class="js-vertical-tab-content vertical-tab-content">
+      <%= display_trips @dashboard.confirmed_trips.finished %>
+    </div>
+  </div>
+</div>
