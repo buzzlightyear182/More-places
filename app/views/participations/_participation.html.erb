@@ -1,4 +1,6 @@
 <div>
   <%= link_to participation.user.username, "" %>
-  <%= show_button_for participation %>
+  <% if participation.trip.participants.include? current_user %>
+    <%= show_button_for participation %>
+  <% end %>
 </div>
