@@ -1,6 +1,6 @@
 class SendConfirmation < ActionMailer::Base
   # mandrill = Mandrill::API.new(ENV['MANDRILL_APIKEY'] || 'gjXW9zjyNAJqUKmM2XVCYQ')
-  default from: "more-places@heroku.com"
+  default from: "admin@placestogether.com"
   # default from: "app28633921@heroku.com"
 
   def to_notify_organizer participation
@@ -24,10 +24,10 @@ class SendConfirmation < ActionMailer::Base
   private
 
   def confirm_participant participation
-    "http://localhost:3000/confirm_participant/#{participation.id}"
+    "http://www.placestogether.com/confirm_participant/#{participation.id}"
   end
 
   def show_link_for trip
-    "http://localhost:3000/trips/#{trip.id}"
+    "http://www.placestogether.com/trips/#{trip.id}"
   end
 end
