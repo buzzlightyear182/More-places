@@ -68,6 +68,7 @@ Rails.application.configure do
     authentication: 'plain',
     enable_starttls_auto: true
     }
+  config.action_mailer.default_url_options = { :host => 'placestogether.com' }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
@@ -85,3 +86,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
+
+  Rails.application.routes.default_url_options[:host] = 'placestogether.com'
+
