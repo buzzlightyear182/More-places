@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   def show
-    @profile = current_user.profile
+    @profile = Profile.find(params[:id])
   end
 
   def edit

@@ -8,7 +8,6 @@ class CreateReviews < ActiveRecord::Migration
       t.float :score
       # t.boolean :confirmed?
       t.timestamps
-      t.timestamps
     end
   end
 end

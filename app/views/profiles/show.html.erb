@@ -2,7 +2,7 @@
 <div class="container">
   <%= div_for @profile do %>
     <div class="trip_header">
-      <h3>Profile for <%= current_user.username %></h3>
+      <h3>Profile for <%= @profile.user.username %></h3>
     </div>
     <div class="details">
       <%= show_rating_for @profile %>

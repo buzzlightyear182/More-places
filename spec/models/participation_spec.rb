@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+require 'pry'
 RSpec.describe Participation, :type => :model do
 
   it { should belong_to(:trip) }

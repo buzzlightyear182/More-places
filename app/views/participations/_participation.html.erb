@@ -1,5 +1,5 @@
 <div>
-  <%= link_to participation.user.username, "" %>
+  <%= link_to participation.user.username, profile_path(id:participation.user.profile.id) %>
   <% if participation.trip.participants.include? current_user %>
     <%= show_button_for participation %>
   <% end %>
