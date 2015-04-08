@@ -39,7 +39,7 @@ RSpec.describe SendConfirmation, :type => :mailer do
     end
 
     it 'renders the sender email' do
-      expect(ActionMailer::Base.deliveries.first.from).to eq(["more-places@heroku.com"])
+      expect(ActionMailer::Base.deliveries.first.from).to eq(["admin@placestogether.com"])
     end
   end
 
@@ -66,7 +66,7 @@ RSpec.describe SendConfirmation, :type => :mailer do
     end
 
     it 'renders the sender email' do
-      expect(ActionMailer::Base.deliveries.first.from).to eq(["more-places@heroku.com"])
+      expect(ActionMailer::Base.deliveries.first.from).to eq(["admin@placestogether.com"])
     end
 
   end
