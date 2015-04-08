@@ -30,7 +30,7 @@ RSpec.describe "Joining trips", :type => :feature do
   feature 'Users cannot join a trip' do
     scenario 'if they are the organizer' do
       expect(page).not_to have_content("Join trip")
-      page.has_css?('input', :text => 'Update trip', :visible => true)
+      page.has_css?('input', :text => 'Update', :visible => true)
     end
   end
 

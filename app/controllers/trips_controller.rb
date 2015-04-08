@@ -43,7 +43,7 @@ class TripsController < ApplicationController
 
   def destroy
     @trip = Trip.find(params[:id]).destroy
-    redirect_to root_path
+    redirect_to dashboard_path current_user
   end
 
   private
