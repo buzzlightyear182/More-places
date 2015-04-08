@@ -1,7 +1,22 @@
 <%= render 'refills/navigation' %>
+<div class="row"></div>
+<div class="row form">
+  <h2>Edit your profile <span class="dark-aqua"><%= current_user.username %></span></h2>
 
-<div class="row">
-  <h2>Edit your profile for <%= current_user.username %></h2>
-  <p>User ID:  <%= current_user.id %></p>
-  <p>Profile ID:  <%= @profile.id %></p>
+  <%= show_rating_for @profile %>
+
+  <%= form_for @profile do |f| %>
+
+    <p><em>Ideally, other supplementary details go here, such as personal information, preferences and social network links</em></p>
+
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_area :description, placeholder: "Write a short description about yourself" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Save" %>
+    </div>
+  <% end %>
+
 </div>

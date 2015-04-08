@@ -23,13 +23,15 @@
     <%= form_for [@participation, @review] do |f| %>
       <%= f.hidden_field :author_id, value: current_user.id %>
       <div class="trip_form_field">
-      <%= f.label :content %>
-      <%= f.text_area :content, placeholder: "Please give a short and honest review of your experience with this person" %>
+        <%= f.label :content %>
+        <%= f.text_area :content, placeholder: "Please give a short and honest review of your experience with this person" %>
       </div>
       <div class="trip_form_field">
-      <%= f.label :score %>
-      <p>Please move the slider to adjust the rating score: <strong><span class="score orange">5</span></strong>
-      <p><span class="badge-error">1</span><%= f.range_field :score, min: 1, max: 10, step: 1 %><span class="badge-success">10</span></p>
+        <%= f.label :score %>
+        <p>Please move the slider to adjust the rating score: <strong><span class="score orange">5</span></strong><p>
+        <span class="badge-error">1</span>
+        <%= f.range_field :score, min: 1, max: 10, step: 1 %>
+        <span class="badge-success">10</span></p>
       </div>
       <%= f.submit "Save" %>
     <% end %>

@@ -3,14 +3,15 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   def show
+    @profile = current_user.profile
   end
 
   def edit
-    @profile = Profile.find(params[:id])
+    @profile = current_user.profile
   end
 
   def update
-    @profile = Profile.find(params[:id])
+    @profile = current_user.profile
     @profile.update_attributes! profile_params
     if @profile.save
       flash[:success] = "Profile updated!"

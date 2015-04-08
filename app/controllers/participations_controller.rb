@@ -1,5 +1,7 @@
 class ParticipationsController < ApplicationController
 
+  before_action :authenticate_user!, only: :create
+
   def create
     trip = Trip.find(params[:trip_id])
     @participation = Participation.create!(trip_id: trip.id, user_id: current_user.id, confirmed?: false)

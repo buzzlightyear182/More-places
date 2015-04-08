@@ -1,6 +1,8 @@
 <%= render 'refills/navigation' %>
 <div class="row"></div>
 <div class="row">
+  <%= button_to "Edit your profile", edit_profile_path(current_user), method: :get, :class => 'create' %>
+
   <%= button_to "Start your own trip", new_trip_path, method: :get, :class => 'create' %>
 </div>
 

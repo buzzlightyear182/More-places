@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_many :confirmed_participations, -> {is_confirmed}, :class_name => 'Participation'
   has_many :confirmed_trips, through: :confirmed_participations, source: :trip
 
+  has_many :reviews, through: :confirmed_participations
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,  :authentication_keys => [:login]
 
@@ -24,6 +26,11 @@ class User < ActiveRecord::Base
     self.where("username = ?", conditions[:login]).limit(1).first ||
     self.where("email = ?", conditions[:login]).limit(1).first
   end
+
+  # def compute_average_rating
+  #   average_rating = self.reviews.average(:score)
+  #   self.profile.update_attributes(rating: average_rating)
+  # end
 
   private
 

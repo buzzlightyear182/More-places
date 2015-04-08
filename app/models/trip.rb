@@ -11,7 +11,7 @@ class Trip < ActiveRecord::Base
   # has_many :pending_participants, through: :pending_participations, source: :user
 
   has_many :confirmed_participations, -> {is_confirmed}, :class_name => 'Participation'
-  # has_many :confirmed_participants, through: :confirmed_participations, source: :user
+  has_many :confirmed_participants, through: :confirmed_participations, source: :user
 
   scope :finished, -> { where('to_date < ?', Date.today) }
   scope :upcoming, -> { where('from_date > ?', Date.today) }

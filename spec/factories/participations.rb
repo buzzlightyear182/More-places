@@ -4,5 +4,4 @@ FactoryGirl.define do
     trip
     confirmed? true
   end
-
 end

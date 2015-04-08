@@ -5,7 +5,7 @@ class SendConfirmation < ActionMailer::Base
 
   def to_notify_organizer participation
     @trip = participation.trip
-    @participant = @trip.organizer
+    @participant = participation.user
 
     @link = confirm_participant(participation)
 

@@ -1,0 +1,16 @@
+<%= render 'refills/navigation' %>
+<div class="container">
+  <%= div_for @profile do %>
+    <div class="trip_header">
+      <h3>Profile for <%= current_user.username %></h3>
+    </div>
+    <div class="details">
+      <%= show_rating_for @profile %>
+    </div>
+
+    <div class="details">
+      <h4>Description</h4>
+      <p class="dark-aqua bigger"><%= @profile.description %></p>
+    </div>
+  <% end %>
+</div>

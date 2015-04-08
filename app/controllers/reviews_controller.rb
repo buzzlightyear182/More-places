@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
 
+  before_action :authenticate_user!, only: [:new, :create]
+
   def new
     @participation = Participation.find(params[:participation_id])
     @review = Review.new
