@@ -16,4 +16,6 @@ class ApplicationController < ActionController::Base
     dashboard_path current_user
   end
 
+
+
 end

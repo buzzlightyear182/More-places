@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
 
   root 'static#home', via: :get
 
@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   resources :destinations, only: :index
   resources :activities, only: :index
+  resources :profiles, only: [:show, :edit, :update]
 
   resources :contact_forms, only: [:new, :create]
 

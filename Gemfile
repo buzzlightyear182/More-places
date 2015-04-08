@@ -42,6 +42,13 @@ gem 'spring',        group: :development
 
 gem 'rails_12factor', group: :production
 
+gem 'capistrano'
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
+
+# Add this if you're using rbenv
+gem 'capistrano-rbenv', github: "capistrano/rbenv"
+
 gem 'rspec-rails', group: [:test, :development]
 gem 'shoulda-matchers', require: false, group: [:test, :development]
 gem 'pry', group: [:test, :development]

@@ -6,6 +6,7 @@ RSpec.describe "Added Devise for User Authentication", :type => :feature do
     scenario 'with valid email and password' do
       sign_up_with 'username','valid@example.com', 'password'
       expect(page).to have_content('Logout')
+      expect(page).to  have_content('Edit your profile')
     end
   end
 

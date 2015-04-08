@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :trips, dependent: :destroy
   has_many :participations, dependent: :destroy
   has_many :reviews
+  has_one :profile
 
   has_many :confirmed_participations, -> {is_confirmed}, :class_name => 'Participation'
   has_many :confirmed_trips, through: :confirmed_participations, source: :trip
@@ -17,9 +18,17 @@ class User < ActiveRecord::Base
   validates :encrypted_password, presence: true
   validates :email, presence: true, format: {with: /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-Za-z]{2,4}\z/}, uniqueness: true
 
+  after_create :create_profile
+
   def self.find_for_database_authentication(conditions={})
     self.where("username = ?", conditions[:login]).limit(1).first ||
     self.where("email = ?", conditions[:login]).limit(1).first
+  end
+
+  private
+
+  def create_profile
+    self.profile = Profile.create
   end
 
 end
