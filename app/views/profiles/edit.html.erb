@@ -8,6 +8,7 @@
   <%= form_for @profile do |f| %>
 
     <p><em>Ideally, other supplementary details go here, such as personal information, preferences and social network links</em></p>
+    <%= f.hidden_field :rating, :value => @profile.rating || nil %>
 
     <div class="field">
       <%= f.label :description %>

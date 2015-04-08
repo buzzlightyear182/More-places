@@ -5,34 +5,30 @@ class Review < ActiveRecord::Base
   validates :content, presence: true
   validates :score, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
 
-  after_create :update_rating
+  after_create :update_profile_rating
 
   validate :check_trip_members
 
+  def reviewee
+    participation.user
+  end
+
   def check_trip_members
-    if (check_author && check_reviewee)
+    if (check(author) && check(reviewee))
       return true
     else
       errors.add(:author, "is not part of same trip with reviewee. Please check again.")
     end
   end
 
-  def check_author
-    participation.trip.confirmed_participants.include? author
-  end
-
-  def check_reviewee
-    participation.trip.confirmed_participants.include? participation.user
+  def check member
+    participation.trip.confirmed_participants.include? member
   end
 
   private
 
-  def update_rating
-  #   if participation.user.profile.rating.nil?
-  #     self.score = participation.user.profile.rating
-  #   else
-  #     participation.user.compute_average_rating
-  #   end
+  def update_profile_rating
+    reviewee.profile.update_rating_with score
   end
 
 end
