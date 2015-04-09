@@ -12,9 +12,9 @@ RSpec.describe Review, :type => :model do
 
     it "there are at least 2 members in a trip" do
       trip_members = joiner.trip.confirmed_participants
-      trip_members.each do |trip_member|
-        puts trip_member.username
-      end
+      # trip_members.each do |trip_member|
+      #   puts trip_member.username
+      # end
       expect(trip_members.count).to eq(2)
     end
 

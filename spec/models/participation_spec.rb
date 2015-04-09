@@ -7,19 +7,19 @@ RSpec.describe Participation, :type => :model do
 
   let (:trip) { create(:trip) }
 
-  describe "when organizer creates a trip" do
+  describe "is automatically confirmed when" do
 
-    it "should be automatically confirmed" do
+    it "organizer creates a trip" do
       expect(trip.participations.first.confirmed?).to be true
     end
   end
 
-  describe "when a participant joins a trip" do
+  describe "is automatically on pending when" do
 
     let(:participant) { create(:user, username: 'participant') }
     let(:participation) { Participation.create( user_id: participant.id, trip_id: trip.id, confirmed?: false) }
 
-    it "should be automatically pending" do
+    it "a participant joins a trip" do
       participation.reload
       expect(trip.participations.second.confirmed?).to be false
     end

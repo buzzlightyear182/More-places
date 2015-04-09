@@ -9,20 +9,20 @@ RSpec.describe Destination, :type => :model do
     @destination = create(:destination)
   end
 
-  describe "will only be created" do
+  describe "will only be created when" do
 
-    it "if no record exists" do
+    it "no record exists" do
       new_destination = create(:destination, city: "Barcelona", country: "Spain")
-      trip = create(:trip, destination: new_destination)
+      create(:trip, destination: new_destination)
       expect(Destination.count).to eq(2)
     end
 
   end
 
-  describe "will not be created" do
+  describe "will not be created when" do
 
-    it "if record exists" do
-      trip = create(:trip, destination: @destination)
+    it "a record already exists" do
+      create(:trip, destination: @destination)
       expect(Destination.count).to eq(1)
     end
 
