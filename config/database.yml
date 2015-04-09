@@ -80,8 +80,8 @@ test:
 #
 production:
   <<: *default
-  database: db
-  username: root
+  database: projectv2_production
+  username: project_v2
   password: <%= ENV['PROJECT_DATABASE_PASSWORD'] %>
 
 
