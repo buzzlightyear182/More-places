@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :review do
-    participation
+    joiner
     participant
     content "This is a review"
     score 10

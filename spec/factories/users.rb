@@ -14,8 +14,13 @@ FactoryGirl.define do
       username "reviewer"
     end
 
+    trait :second_participant do
+      username "second"
+    end
+
     factory :participant, traits: [:participant]
     factory :author, traits: [:author]
+    factory :second_participant, traits: [:second_participant]
 
   end
 
