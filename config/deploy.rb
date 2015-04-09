@@ -11,6 +11,9 @@ set :repo_url, 'git@github.com:buzzlightyear182/More-places.git'
 # set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 # set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 
+# Default value for :pty is false
+set :pty, true
+
 # how many old releases do we want to keep, not much
 set :keep_releases, 5
 
