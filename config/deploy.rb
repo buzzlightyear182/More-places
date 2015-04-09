@@ -1,4 +1,4 @@
-require "bundler/capistrano"
+require "capistrano/bundler"
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
@@ -40,6 +40,8 @@ set :pty, true
 
 # set :linked_files, %w{config/database.yml}
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+
+after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
 namespace :deploy do
 
