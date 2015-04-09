@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe ProfileController, type: :controller do
+RSpec.describe ProfilesController, type: :controller do
 
 end

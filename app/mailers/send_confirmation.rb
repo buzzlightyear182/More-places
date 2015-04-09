@@ -1,7 +1,5 @@
 class SendConfirmation < ActionMailer::Base
-  # mandrill = Mandrill::API.new(ENV['MANDRILL_APIKEY'] || 'gjXW9zjyNAJqUKmM2XVCYQ')
   default from: "admin@placestogether.com"
-  # default from: "app28633921@heroku.com"
 
   def to_notify_organizer participation
     @trip = participation.trip
@@ -9,7 +7,7 @@ class SendConfirmation < ActionMailer::Base
 
     @link = confirm_participant(participation)
 
-    mail(to: @participant.email, subject: "Someone wants to join you in #{@trip.destination_name}")
+    mail(to: @trip.organizer.email, subject: "Someone wants to join you in #{@trip.destination_name}")
   end
 
   def to_notify_participant participation

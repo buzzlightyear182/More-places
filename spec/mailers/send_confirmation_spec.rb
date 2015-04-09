@@ -19,10 +19,6 @@ RSpec.describe SendConfirmation, :type => :mailer do
   describe "When someone wants to join a trip, it" do
 
     before :each do
-      # @trip = create(:trip)
-      # @participant = create(:user, username: 'participant')
-      # @participation = Participation.create(user_id: @participant.id, trip_id: @trip.id, confirmed?: false)
-
       SendConfirmation.to_notify_organizer(participation).deliver
     end
 
@@ -46,10 +42,6 @@ RSpec.describe SendConfirmation, :type => :mailer do
   describe "When the trip organizer adds you to the trip, it" do
 
     before(:each) do
-      # @trip = create(:trip)
-      # @participant = create(:user, username: 'participant')
-      # @participation = Participation.create(user_id: @participant.id, trip_id: @trip.id, confirmed?: false)
-
       SendConfirmation.to_notify_participant(participation).deliver
     end
 
