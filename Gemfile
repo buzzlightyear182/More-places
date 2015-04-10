@@ -46,6 +46,9 @@ gem 'capistrano'
 gem 'capistrano-bundler'
 gem 'capistrano-rails'
 
+# Add this if you're using rbenv
+gem 'capistrano-rbenv', github: "capistrano/rbenv"
+
 gem 'rspec-rails', group: [:test, :development]
 gem 'shoulda-matchers', require: false, group: [:test, :development]
 gem 'pry', group: [:test, :development]
@@ -55,15 +58,15 @@ gem 'factory_girl_rails', group: [:test, :development]
 gem 'letter_opener', group: [:test, :development]
 gem 'database_cleaner', group: [:test, :development]
 
-# gem 'simple_form'
+gem 'simple_form'
 gem 'mail_form'
 
 #User authentication
 gem 'devise'
 
  #Country list
-# gem 'countries'
-# gem 'country_select'
+gem 'countries'
+gem 'country_select'
 # gem 'worlddb-models'
 
 #Front-end stuff
